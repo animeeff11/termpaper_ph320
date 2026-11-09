@@ -1,0 +1,74 @@
+\section*{Scaling Theory of localization}
+Thouless hypothesized that $g(L)$ is the relevant quantity which determines the change of energy levels when such hypercubes are joined together. We present the argument given by Girvin and Yang to motivate the same\cite{GirvinYang2019}. 
+
+Consider $b^d$ hypercubes of $d$-dimension and $L$ length fitted together to form a hypercube of $bL$ in the same dimension. The individual say $j^{th}$ isolated hypercube hamiltonian is $\hat{H_j}$ and interaction hamiltonian of these cubes is $\hat{H_T}$, then the total hamiltonian is given by
+\[
+\hat{H_{bL}}= \sum_{j=1}^{b^d} {\hat{H_j}} + \hat{H_T}
+\]
+To understand the effect of joining the cubes together, the interaction term can be treated as a perturbation to the sum of individual hypercube hamiltonians. Let $|\alpha\rangle$ and $|\beta\rangle$ be eigenstates of
+unperturbed term, with energies $E_\alpha^{(0)}$ and $E_\beta^{(0)}$,
+respectively. In first-order perturbation theory, the amplitude
+for the state $|\beta\rangle$ to mix into the state
+$|\alpha\rangle$ is proportional to
+\begin{equation}
+    c_{\beta\alpha}^{(1)}
+    =
+    \frac{\langle \beta|\hat{H_T} |\alpha\rangle}
+         {E_\alpha^{(0)}-E_\beta^{(0)}}.
+    \label{eq:mixing_amplitude}
+\end{equation}
+The physical argument that Thouless gave that the characteristic neighbouring block coupling is related to the sensitivity of energy levels to boundary conditions. The corresponding energy scale is the Thouless energy $E_T(L)$ as discussed in the prior section and the typical energy denominator is set by the mean level spacing $\delta E(L)$ under this energy scale, so these mixing amplitudes are proportional to the dimensionless conductance $g(L)$ defined in eq\ref{eq:thouless_number}.
+Quantity like $g(bL)$, dimensionless conductance of the joined system should be a function of these mixing amplitude at least under the perturbative regime which for small $g(L)$. For large $g(L)$, the perturbation is not valid but nonetheless, one finds the new Thouless number of the joined system as a function of characteristic energy ratio rather than the sample size.
+\begin{equation}
+    g(bL)
+    = f\left(\frac{E_T(L)}{\delta E(L)}\right).
+\end{equation}
+Using eq. \ref{eq:thouless_number}, we write
+\begin{equation}
+    g(bL)=f(g(L))
+\end{equation}
+where $b$ and $d$ is fixed here and $f$ is a universal scaling function. If $b$ and $d$ are not taken as fixed here they will also be parameters of the function.
+This motivates the relevance of $g$ as the scaling parameter.
+
+The key emphasis here is that the evolution of the electronic states upon combining blocks can be characterized by the dimensionless conductance of the constituent blocks provided the specified scale factor and dimensionality, rather than by additional independent microscopic parameters. The universality of this scaling description is a physical assumption to be tested through its consequences, not a result of first-order perturbation theory alone.
+
+In further developing this idea, AALR introduced a new function called the beta function $\beta(g)$ defined as\cite{AALR1979},
+\begin{equation}
+    \beta(g)
+    =\frac{d\ln g(L)}{d\ln L}.
+    \label{eq:aalr_beta_function}
+\end{equation}
+here $\beta >0$ means metallic behaviour and $\beta<0 $ denotes an insulator behaviour. For the case of $\beta=0$ we see an critical point beyond which we see an metal-insulator transition.We can see this transition for 3D systems. Also this differential form is just for convenience, though the boldness of there hypothesis was to assume the scaling function being universal, that is the function does not depend on the microscopic nature of the system ( carrier concentration, impurity concentration, impurity potential, etc.) rather it depends on the factors like dimensionality, spin-orbit coupling, symmetry.
+
+For $g \gg 1$, we find $g$ from eq.\ref{eq:thouless_number} where $G(L)$ is given by Ohm's law as written in eq.\ref{eq:ohmic_conductance}, combining these we write
+\[g(L)= \frac{\hbar}{e^2} \sigma L^{d-2}\]
+here $\sigma$ is conductivity which is a constant it does not depend on length scale of the sample, so the beta function in the ohmic regime is given by
+\begin{equation}
+    \beta=d-2
+    \label{eq:ohmic_regime}
+\end{equation}
+when we join together the conductors some in series and some in parallel, the total conductance depends on the original conductance of the constituents (as we see in series and parallel resistance formulas), it does not matter what the materials are but it does matter how many conductors are in parallel, which dimensionality denotes here and hence enter the picture. 
+
+For $g\ll 1$, the system is in the strongly localized regime, where Ohm's law with a scale-independent conductivity is no longer valid\cite{Anderson1958,LeeRamakrishnan1985}. The electronic states are localized, and conductance decreases exponentially as the system size increases. Following AALR convention, we write
+\begin{equation}
+    g(L)\simeq g_a(d)e^{-\alpha L},
+\end{equation}
+where $\alpha>0$ is an inverse length scale and $g_a(d)$ is a dimension-dependent prefactor. Taking the logarithm gives
+\begin{equation}
+    \ln g(L)=\ln g_a(d)-\alpha L.
+    \label{eq:subs}
+\end{equation}
+Using the definition of the beta function, we obtain
+\[
+    \beta(g)
+    =\frac{d\ln g}{d\ln L}
+    =L\frac{d\ln g}{dL}\\
+    =-\alpha L.
+\]
+Eliminating $-\alpha L$ using the expression for given in eq.\ref{eq:subs}, we find for $g\ll1$,
+\begin{equation}
+    \beta(g)\simeq
+    \ln\!\left[\frac{g}{g_a(d)}\right].
+    \label{eq:exp_regime}
+\end{equation}
+Thus, $\beta(g)$ becomes increasingly negative as $g$ approaches zero which is the perfect localization limit and consistent with the exponential suppression of conductance in the localized regime.

@@ -1,0 +1,40 @@
+\section*{Dimensionless Conductance}
+Thouless and collaborators in a series of papers began to establish a scaling description of localization, they worked with conductance $G$ as the main parameter to understand localization\cite{Thouless1974,EdwardsThouless1972}. Consider, conductance for a hypercube in d-dimension of length L that can be written in the ohmic regime $(L\gg l)$ as,
+\begin{equation}
+    G(L)=\sigma L^{d-2}
+    \label{eq:ohmic_conductance}
+\end{equation}
+Using Einstein's relation, we substitute $\sigma$ and write,
+\begin{equation}
+    G(L)= \frac{e^2D}{L^2} \frac{d(nL^{d})}{d\mu}
+    \label{eq:ohmic_conductance_after_einstein}
+\end{equation}
+Here, $D$ is the diffusion coefficient, $n$ is the particle number density and $\mu$ is the chemical potential of the system \cite{GirvinYang2019}.
+
+We now define $\Delta t$ as the time taken by one electron to diffuse over a length $L$ with diffusion coeffiecient of $D$
+\[\Delta t= \frac{L^2}{D}\]
+Similarly $\delta E$ is the mean energy level spacing at fermi energy which is defined as,
+\begin{equation}
+    \delta E =
+    \left[
+        \frac{d(nL^d)}{d\mu}
+    \right]^{-1},
+    \label{eq:mean_energy_spacing}
+\end{equation}
+substituting these in Eq.\ref{eq:ohmic_conductance_after_einstein} we get,
+\[
+    G(L)= \frac{e^2}{\Delta t\delta E}.
+\]
+Using Heisenberg's uncertainty principle between energy and time, we can write the conductance as 
+\begin{equation}
+    G(L)= \frac{e^2}{\hbar}\frac{E_T}{\delta E}
+\end{equation}
+where $E_T$ is the thouless energy, which relates the sensitivity of energy levels with changes in the boundary conditions.
+We define a dimensionless conductance $g(L)$ which AALR paper calls as the "\textit{Thouless number}" as
+\begin{equation}
+    g(L)=\frac{G(L)}{e^2/\hbar}=\frac{E_T}{\delta E}
+    \label{eq:thouless_number}
+\end{equation}
+Consider $g\gg1$, thouless energy is very large than level spacing so the neighbouring level are sensitive to boundary condition changes and are close so overlap is significant leading to electron hopping or conductor behaviour. The other extrema of $g\ll1$ gives insulator behaviour as overlap will be negligible.
+
+When $L<<l$, electrons typically cross the sample before undergoing impurity scattering, and transport is approximately ballistic, the sample can remain phase-coherent over its entire size, in this regime defining $G$ using eq. \ref{eq:ohmic_conductance} is not valid. But one can show eq. \ref{eq:thouless_number} is still valid in this regime for the considered hypercube\cite{AALR1979,GirvinYang2019}.

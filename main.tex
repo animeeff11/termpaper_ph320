@@ -1,0 +1,42 @@
+
+\documentclass[12pt,a4paper]{article}
+\usepackage{tikz}
+% Page layout
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% Mathematics and figures
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+% Numbered citations and bibliography
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\addbibresource{references.bib}
+
+\title{Scaling Theory of Localization}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+% We will write the abstract after completing the paper.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% Import each section in the required order
+\input{sections/01_introduction}
+\input{sections/02_thouless}
+\input{sections/03_scaling theory_intro}
+\input{sections/04_perturbation}
+
+\printbibliography
+
+\end{document}
