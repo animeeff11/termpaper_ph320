@@ -1,0 +1,45 @@
+
+\section{Appendix: derivation of the Kubo formula for the conductivity}\label{app:kubo}
+
+\noindent The approach follows Bruus and Flensberg~\cite{BruusFlensberg}, Ch.~6 (Secs.~6.1--6.2). The steps below are written out in full; the Drude check is added here. Notation: $\hbar=1$, $\avg{\cdots}_0=\Tr[\rho_0\cdots]$ with $\rho_0=e^{-\beta H_0}/Z_0$, tilde = interaction picture.
+
+\subsection*{A.1\quad General linear response}
+Let $H(t)=H_0+H'(t)\theta(t-t_0)$. The thermal weights $e^{-\beta E_n}/Z_0$ of the initial states $|n\rangle$ stay fixed while the states evolve, so $\avg{A(t)}=Z_0^{-1}\sum_n e^{-\beta E_n}\langle n(t)|A|n(t)\rangle$.
+
+Define $|\tilde n(t)\rangle=e^{\ii H_0t}|n(t)\rangle$ and $\tilde O(t)=e^{\ii H_0t}Oe^{-\ii H_0t}$. Differentiating and using $\ii\partial_t|n\rangle=(H_0+H')|n\rangle$, the $\pm H_0$ terms cancel:
+\begin{equation}
+\ii\partial_t|\tilde n(t)\rangle=\tilde H'(t)|\tilde n(t)\rangle .
+\end{equation}
+Hence $|\tilde n(t)\rangle=\tilde U(t,t_0)|\tilde n(t_0)\rangle$ with $\tilde U=1-\ii\int_{t_0}^t\dd t'\,\tilde H'(t')\tilde U(t',t_0)$, and to first order $\tilde U\simeq1-\ii\int_{t_0}^t\dd t'\tilde H'(t')$. The phases $e^{\pm\ii E_nt_0}$ of ket and bra cancel, so
+\begin{equation}
+\avg{A(t)}=\big\langle\tilde U^\dagger\tilde A(t)\tilde U\big\rangle_0
+=\avg{A}_0-\ii\int_{t_0}^{t}\dd t'\,\avg{[\tilde A(t),\tilde H'(t')]}_0+O(H'^2).
+\label{eq:Kb}
+\end{equation}
+(The zeroth-order term is $\avg{A}_0$ by cyclicity of the trace and $[\rho_0,H_0]=0$.) With
+\begin{equation}
+C^R_{AH'}(t,t')=-\ii\theta(t-t')\avg{[\tilde A(t),\tilde H'(t')]}_0 ,
+\end{equation}
+Eq.~\eqref{eq:Kb} reads $\delta\avg{A(t)}=\int\dd t'\,C^R_{AH'}(t,t')e^{-\eta(t-t')}$, with $\eta\to0^+$ (adiabatic switching). Conjugating the trace by $e^{\pm\ii H_0t'}$ shows $C^R$ depends only on $t-t'$. For $H'(t)=\int\frac{\dd\omega}{2\pi}e^{-\ii\omega t}H'_\omega$, setting $t_0\to-\infty$ and $\tau=t-t'$ gives
+\begin{equation}
+\delta\avg{A_\omega}=C^R_{AH'_\omega}(\omega),\qquad
+C^R(\omega)=\int_{-\infty}^{\infty}\dd\tau\,e^{\ii(\omega+\ii\eta)\tau}C^R(\tau).
+\end{equation}
+
+\subsection*{A.2\quad Conductivity}
+For charge $-e$ and gauge $\phi_{\rm ext}=0$, $\bm E=-\partial_t\bm A_{\rm ext}$ gives $\bm A_{\rm ext}=\bm E/(\ii\omega)$, and to linear order $H_{\rm ext}=e\int\dd\bm r\,\bm J_0\cdot\bm A_{\rm ext}$. The current operator has a paramagnetic and a diamagnetic part, $\bm J=\bm J_0+\frac em\bm A_{\rm ext}\rho$; the $A^2$ term in $H$ is second order and is dropped. Then
+\begin{align}
+\avg{J_e^\alpha}=-e\avg{J^\alpha}
+&=-e\int\dd\bm r'\sum_\beta C^R_{J_0^\alpha J_0^\beta}\frac{e}{\ii\omega}E^\beta-\frac{e^2}{m}\frac{n}{\ii\omega}E^\alpha ,
+\end{align}
+where $\avg{\bm J_0}_0=0$ was used for the first term and $\avg\rho\to n$ for the second. Using $-1/\ii=\ii$ and comparing with $J_e^\alpha=\int\dd\bm r'\sigma^{\alpha\beta}E^\beta$,
+\begin{equation}
+\boxed{\sigma^{\alpha\beta}(\bm r,\bm r',\omega)=\frac{\ii e^2}{\omega}\,\Pi^R_{\alpha\beta}(\bm r,\bm r',\omega)+\frac{\ii e^2n(\bm r)}{m\omega}\,\delta(\bm r-\bm r')\delta_{\alpha\beta}},
+\label{eq:Ksigma}
+\end{equation}
+with $\Pi^R_{\alpha\beta}=-\ii\theta(t-t')\avg{[\tilde J_0^\alpha(\bm r,t),\tilde J_0^\beta(\bm r',t')]}_0$ the retarded current--current correlator. The charge-including correlator of the main text is $C^R=e^2\Pi^R$.
+
+\subsection*{A.3\quad Check: clean free electrons}
+For free electrons the total current is proportional to the conserved total momentum, so $[\bm J_{\rm tot}(t),\bm J_{\rm tot}]=0$ and $\Pi^R(\bm q=0,\omega)=0$. Then $\sigma=\ii ne^2/(m\omega)$, which is the $\omega\tau\gg1$ limit of the Drude form $\sigma=(ne^2\tau/m)/(1-\ii\omega\tau)$. Signs and factors of $\ii$ are therefore consistent. For the disordered system the dc conductivity requires $\bm q\to0$ first, then $\omega\to0$.
+
+\noindent\emph{Remark.} Eq.~(6.25) of Ref.~\cite{BruusFlensberg} is printed with the diamagnetic term as $\ii e^2n/(\ii\omega m)$; the derivation above gives $+\ii e^2n/(m\omega)$, the form that passes the Drude check.
