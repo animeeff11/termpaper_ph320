@@ -1,5 +1,9 @@
-
-\section{Appendix: derivation of the Kubo formula for the conductivity}\label{app:kubo}
+% --- helper commands (self-contained; safe if already defined) ---
+\providecommand{\ii}{\mathrm{i}}
+\providecommand{\dd}{\mathrm{d}}
+\providecommand{\avg}[1]{\langle #1 \rangle}
+\providecommand{\Tr}{\operatorname{Tr}}
+\section*{Appendix A: Kubo formula for conductivity}\label{app:kubo}
 
 \noindent The approach follows Bruus and Flensberg~\cite{BruusFlensberg}, Ch.~6 (Secs.~6.1--6.2). The steps below are written out in full; the Drude check is added here. Notation: $\hbar=1$, $\avg{\cdots}_0=\Tr[\rho_0\cdots]$ with $\rho_0=e^{-\beta H_0}/Z_0$, tilde = interaction picture.
 
@@ -27,19 +31,17 @@ C^R(\omega)=\int_{-\infty}^{\infty}\dd\tau\,e^{\ii(\omega+\ii\eta)\tau}C^R(\tau)
 \end{equation}
 
 \subsection*{A.2\quad Conductivity}
-For charge $-e$ and gauge $\phi_{\rm ext}=0$, $\bm E=-\partial_t\bm A_{\rm ext}$ gives $\bm A_{\rm ext}=\bm E/(\ii\omega)$, and to linear order $H_{\rm ext}=e\int\dd\bm r\,\bm J_0\cdot\bm A_{\rm ext}$. The current operator has a paramagnetic and a diamagnetic part, $\bm J=\bm J_0+\frac em\bm A_{\rm ext}\rho$; the $A^2$ term in $H$ is second order and is dropped. Then
+For charge $-e$ and gauge $\phi_{\rm ext}=0$, $\mathbf{E}=-\partial_t\mathbf{A}_{\rm ext}$ gives $\mathbf{A}_{\rm ext}=\mathbf{E}/(\ii\omega)$, and to linear order $H_{\rm ext}=e\int\dd\mathbf{r}\,\mathbf{J}_0\cdot\mathbf{A}_{\rm ext}$. The current operator has a paramagnetic and a diamagnetic part, $\mathbf{J}=\mathbf{J}_0+\frac em\mathbf{A}_{\rm ext}\rho$; the $A^2$ term in $H$ is second order and is dropped. Then
 \begin{align}
 \avg{J_e^\alpha}=-e\avg{J^\alpha}
-&=-e\int\dd\bm r'\sum_\beta C^R_{J_0^\alpha J_0^\beta}\frac{e}{\ii\omega}E^\beta-\frac{e^2}{m}\frac{n}{\ii\omega}E^\alpha ,
+&=-e\int\dd\mathbf{r}'\sum_\beta C^R_{J_0^\alpha J_0^\beta}\frac{e}{\ii\omega}E^\beta-\frac{e^2}{m}\frac{n}{\ii\omega}E^\alpha ,
 \end{align}
-where $\avg{\bm J_0}_0=0$ was used for the first term and $\avg\rho\to n$ for the second. Using $-1/\ii=\ii$ and comparing with $J_e^\alpha=\int\dd\bm r'\sigma^{\alpha\beta}E^\beta$,
+where $\avg{\mathbf{J}_0}_0=0$ was used for the first term and $\avg\rho\to n$ for the second. Using $-1/\ii=\ii$ and comparing with $J_e^\alpha=\int\dd\mathbf{r}'\sigma^{\alpha\beta}E^\beta$,
 \begin{equation}
-\boxed{\sigma^{\alpha\beta}(\bm r,\bm r',\omega)=\frac{\ii e^2}{\omega}\,\Pi^R_{\alpha\beta}(\bm r,\bm r',\omega)+\frac{\ii e^2n(\bm r)}{m\omega}\,\delta(\bm r-\bm r')\delta_{\alpha\beta}},
+\boxed{\sigma^{\alpha\beta}(\mathbf{r},\mathbf{r}',\omega)=\frac{\ii e^2}{\omega}\,\Pi^R_{\alpha\beta}(\mathbf{r},\mathbf{r}',\omega)+\frac{\ii e^2n(\mathbf{r})}{m\omega}\,\delta(\mathbf{r}-\mathbf{r}')\delta_{\alpha\beta}},
 \label{eq:Ksigma}
 \end{equation}
-with $\Pi^R_{\alpha\beta}=-\ii\theta(t-t')\avg{[\tilde J_0^\alpha(\bm r,t),\tilde J_0^\beta(\bm r',t')]}_0$ the retarded current--current correlator. The charge-including correlator of the main text is $C^R=e^2\Pi^R$.
+with $\Pi^R_{\alpha\beta}=-\ii\theta(t-t')\avg{[\tilde J_0^\alpha(\mathbf{r},t),\tilde J_0^\beta(\mathbf{r}',t')]}_0$ the retarded current--current correlator. The charge-including correlator of the main text is $C^R=e^2\Pi^R$.
 
 \subsection*{A.3\quad Check: clean free electrons}
-For free electrons the total current is proportional to the conserved total momentum, so $[\bm J_{\rm tot}(t),\bm J_{\rm tot}]=0$ and $\Pi^R(\bm q=0,\omega)=0$. Then $\sigma=\ii ne^2/(m\omega)$, which is the $\omega\tau\gg1$ limit of the Drude form $\sigma=(ne^2\tau/m)/(1-\ii\omega\tau)$. Signs and factors of $\ii$ are therefore consistent. For the disordered system the dc conductivity requires $\bm q\to0$ first, then $\omega\to0$.
-
-\noindent\emph{Remark.} Eq.~(6.25) of Ref.~\cite{BruusFlensberg} is printed with the diamagnetic term as $\ii e^2n/(\ii\omega m)$; the derivation above gives $+\ii e^2n/(m\omega)$, the form that passes the Drude check.
+For free electrons the total current is proportional to the conserved total momentum, so $[\mathbf{J}_{\rm tot}(t),\mathbf{J}_{\rm tot}]=0$ and $\Pi^R(\mathbf{q}=0,\omega)=0$. Then $\sigma=\ii ne^2/(m\omega)$, which is the $\omega\tau\gg1$ limit of the Drude form $\sigma=(ne^2\tau/m)/(1-\ii\omega\tau)$. Signs and factors of $\ii$ are therefore consistent. For the disordered system the dc conductivity requires $\mathbf{q}\to0$ first, then $\omega\to0$.

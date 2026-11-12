@@ -1,30 +1,30 @@
 \subsubsection*{Perturbation arguments}
-From the above limiting behaviours, we try to build a picture for $d= 1, 2$ and $3$. To construct the full scaling curve, AALR made the bold assumption that $\beta(g)$ is both continuous and monotonic. While mathematically this is an ansatz,but it is physically deeply motivated. Monotonicity reflects the fact that small conductance implies stronger localization and vice versa. AALR argued that the scaling function should be continuous because it describes how the conductance evolves when finite blocks of sites are combined. A cusp at finite conductance would introduce a non-smooth feature into this scale-evolution relation, for which they identified no physical justification. Crucially, this assumption directly contradicts Mott's hypothesis of a discontinuous conductivity jump\cite{AALR1979}.
+From the above limiting behaviours, we try to build a picture for $d= 1, 2$ and $3$. To construct the full scaling curve, AALR made the bold assumption that $\beta(g)$ is both continuous and monotonic. While mathematically this is an ansatz, but it is physically deeply motivated. Monotonicity reflects the fact that small conductance implies stronger localization and vice versa. AALR argued that the scaling function should be continuous because it describes how the conductance evolves when finite blocks of sites are combined. A cusp at finite conductance would introduce a non-smooth feature into this scale-evolution relation, for which they identified no physical justification. Crucially, this assumption directly contradicts Mott's hypothesis of a discontinuous conductivity jump\cite{AALR1979}.
 
-In the ohmic regime, we never considered any quantum interference effects. Hence, to create a realistic scaling curve we introduce the leading order correction due to quantum interference of scattered waves. Lets begin with the free electron gas with few disorder and treating those disorder as perturbation, using linear response theory to an applied m=electromagnetic field, we can get the conductance expressed in terms of current-current correlation with the help of Kubo formalism (see Appendix 1).
+In the ohmic regime, we never considered any quantum interference effects. Hence, to create a realistic scaling curve we introduce the leading order correction due to quantum interference of scattered waves. Let's begin with the free electron gas with weak disorder and treating those disorder as perturbation, using linear response theory to an applied electromagnetic field, we can get the conductivity expressed in terms of current-current correlation with the help of Kubo formalism (see Appendix A).
 \begin{equation}
     \sigma_{\alpha\beta}
     (\mathbf r,\mathbf r',\omega)
     =
-    \frac{i e^2}{\omega}
-    \chi_{\alpha\beta}^{R}
+    \frac{\ii e^2}{\omega}
+    \Pi_{\alpha\beta}^{R}
     (\mathbf r,\mathbf r',\omega)
     +
-    \frac{e^2 n(\mathbf r)}{m\omega}
+    \frac{\ii e^2 n(\mathbf r)}{m\omega}
     \delta(\mathbf r-\mathbf r')
     \delta_{\alpha\beta},
     \label{eq:kubo_conductivity}
 \end{equation}
 where $n(\mathbf r)$ is the particle density, $m$ is the electron
 mass. The function
-$\chi_{\alpha\beta}^{R}$ denotes the retarded correlation function
+$\Pi_{\alpha\beta}^{R}$ denotes the retarded correlation function
 of the paramagnet current density. In the time domain, this retarded current--current correlation
 function is defined as
 \begin{equation}
-    \chi_{\alpha\beta}^{R}
+    \Pi_{\alpha\beta}^{R}
     (\mathbf r,\mathbf r',t-t')
     =
-    -i\theta(t-t')
+    -\ii\theta(t-t')
     \left\langle
     \left[
         \hat J_0^\alpha(\mathbf r,t),
@@ -34,7 +34,39 @@ function is defined as
     \label{eq:retarded_current_correlation}
 \end{equation}
 where $\theta(t-t')$ is the Heaviside step function,
-$\hat J_0^\alpha$ is the $\alpha$ component of the paramagnetic current-density operator, the subscript "$0$" denotes expectation value is taken with respect tot the unperturbed hamiltonian.\\
-The correlation can be demonstrated as the 
-Langer and Neal later in 1966, gave theory to higher order term in impurity density for the disorder perturbation. They used diagrammatic approach to the problem and gave the amplitude of the process which had a singularity at 
- 
+$\hat J_0^\alpha$ is the $\alpha$ component of the paramagnetic current-density operator, the subscript "$0$" denotes expectation value is taken with respect to the unperturbed hamiltonian.\\ 
+For real frequencies $\omega$ the diamagnetic term in Eq.~\eqref{eq:kubo_conductivity} is purely imaginary, so the dissipative part of the conductivity comes from the current--current correlator alone:
+\begin{equation}
+    \operatorname{Re}\sigma_{\alpha\beta}(\mathbf q,\omega)
+    = -\frac{e^2}{\omega}\operatorname{Im}\Pi^{R}_{\alpha\beta}(\mathbf q,\omega).
+\end{equation}
+The dc conductivity of a uniform sample is obtained by sending the external wavevector to zero first and the frequency afterwards,
+\begin{equation}
+    \sigma_{xx}^{\mathrm{dc}}
+    = -e^2\lim_{\omega\to0}\lim_{\mathbf q\to0}
+      \frac{1}{\omega}\operatorname{Im}\Pi^{R}_{xx}(\mathbf q,\omega),
+\end{equation}
+since a static field with finite $\mathbf q$ would pile up charge. This $\mathbf q$ is the external wavevector and is distinct from the electron momenta introduced below.
+
+For one fixed impurity realization, let the exact one-electron states obey $h_U|a\rangle=\epsilon_a|a\rangle$, and let $v_{ab}$ be the matrix elements of the velocity $p_x/m$. Evaluating the commutator for non-interacting electrons gives
+\begin{equation}
+    \Pi^{R}_{xx}(\omega)
+    = \frac{1}{V}\sum_{a,b,s}\frac{(f_a-f_b)\,|v_{ab}|^2}{\omega+\epsilon_a-\epsilon_b+\mathrm{i}0^+}.
+\end{equation}
+Taking the imaginary part, using $f_a-f_b\to-\omega f'(\epsilon_a)$ for $\omega\to0$, and setting $T=0$ ($-f'=\delta(E_{\mathrm F}-\epsilon)$) gives the Kubo--Greenwood formula
+\begin{equation}
+    \sigma_{xx}^{\mathrm{dc}}
+    = \frac{\pi e^2 g_s}{V}\sum_{a,b}|v_{ab}|^2\,
+      \delta(E_{\mathrm F}-\epsilon_a)\,\delta(E_{\mathrm F}-\epsilon_b),
+\end{equation}
+where $g_s$ is the spin degeneracy and $V$ the sample volume. Now introduce the retarded and advanced Green operators $G^{R/A}(E)=(E-h_U\pm\mathrm{i}0^+)^{-1}$. They satisfy $\delta(E-h_U)=\frac{\mathrm{i}}{2\pi}\,[G^R(E)-G^A(E)]$, which turns the double sum into a trace:
+\begin{align}
+    \sigma_{xx}^{\mathrm{dc}}
+    &= -\frac{e^2 g_s}{4\pi V}\operatorname{Tr}\!\big[v_x(G^R-G^A)\,v_x(G^R-G^A)\big]_{E_{\mathrm F}} \nonumber\\
+    &= \frac{e^2 g_s}{4\pi V}\Big\{2\operatorname{Tr}[v_xG^Rv_xG^A]
+       -\operatorname{Tr}[v_xG^Rv_xG^R]
+       -\operatorname{Tr}[v_xG^Av_xG^A]\Big\}.
+    \label{eq:sigma_trace}
+\end{align}
+The conductivity of a single disordered sample is therefore a product of two Green functions of the \emph{same} sample, with all four retarded/advanced combinations present. Averaging over impurity configurations, which is where the diagrams enter, is done only after this product has been formed.
+% Derivation of the Lehmann step and the trace: Appendix~\ref{app:kubo} gives the Kubo formula; add a reference to your Kubo-Greenwood appendix here if you include one.
