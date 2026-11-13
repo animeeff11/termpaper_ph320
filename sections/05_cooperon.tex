@@ -1,5 +1,4 @@
-\section*{Weak localization Correction
-}
+\section*{Weak localization correction}
 Consider just one fixed impurity configuration, let the exact one-electron states obey $h_U|a\rangle=\epsilon_a|a\rangle$, and let $v_{ab}$ be the matrix elements of the velocity $p_x/m$. Evaluating the commutator for non-interacting electrons gives
 \begin{equation}
     \Pi^{R}_{xx}(\omega)
@@ -21,7 +20,7 @@ where $g_s$ is the spin degeneracy and $V$ the sample volume. Now we introduce t
     \label{eq:sigma_trace}
 \end{align}
 
-The disorder-averaged conductivity is obtained by averaging Eq.~\eqref{eq:sigma_trace} over impurity configurations, after forming the products of Green functions. In the weak-disorder, the leading contribution to the dc conductivity arises from the retarded--advanced (RA) product only. This can be understood from the analytic structure of the Green functions. The poles of $G^R$ and $G^A$ lie on opposite sides of the real energy axis, giving rise to a singular contribution when their poles approach the real axis from opposite directions. This is commonly referred to as the retarded--advanced pole pinch (defined precisely in Appendix~B, Sec.~B.3). In contrast, the poles of two retarded or two advanced Green functions lie on the same side of the real axis, allowing the corresponding energy integral to be evaluated by closing the contour in the opposite half-plane, where no poles are enclosed. Consequently, the RR and AA terms do not produce the same singularity, and hence we retain only the RA contribution in calculating the leading weak-localization correction \cite{Coleman2015},
+The disorder-averaged conductivity is obtained by averaging Eq.~\eqref{eq:sigma_trace} over impurity configurations, after forming the products of Green functions. In the weak-disorder limit, the leading contribution to the dc conductivity arises from the retarded--advanced (RA) product only. This can be understood from the analytic structure of the Green functions. The poles of $G^R$ and $G^A$ lie on opposite sides of the real energy axis, giving rise to a singular contribution when their poles approach the real axis from opposite directions. This is commonly referred to as the retarded--advanced pole pinch (defined precisely in Appendix~B, Sec.~B.3). In contrast, the poles of two retarded or two advanced Green functions lie on the same side of the real axis, allowing the corresponding energy integral to be evaluated by closing the contour in the opposite half-plane, where no poles are enclosed. Consequently, the RR and AA terms do not produce the same singularity, and hence we retain only the RA contribution in calculating the leading weak-localization correction \cite{Coleman2015},
 \begin{equation}
     \overline{\sigma_{xx}^{\mathrm{dc}}}
     \simeq
@@ -53,7 +52,7 @@ while a matrix element $U_{\mathbf k\mathbf p}=\langle\mathbf k|U|\mathbf p\rang
 =\frac{W_0}{V}\,
 \delta_{\mathbf a-\mathbf b,\;\mathbf d-\mathbf c}.
 \]
-Diagrammatically, a Green-function expansion is represented by solid segments, each carrying a momentum and representing a clean propagator $g_0^{R/A}$, with dots representing factors of the impurity potential $U$. Upon disorder averaging, the Gaussian pairings are represented by dashed lines joining pairs of dots. Each dashed line carries the correlator weight $W_0/V$ together with the momentum-conservation condition above. The same disorder realization appears in all Green functions in a product, so the pairings can also connect impurity insertions on different Green-function lines. To not delve that much into details of the diagrammatic perturbation theory and other classes of diagrams and digress we suggest the reader to go through Appendix B and C for details of the outline we serve from the next section. 
+Diagrammatically, a Green-function expansion is represented by solid segments, each carrying a momentum and representing a clean propagator $g_0^{R/A}$, with dots representing factors of the impurity potential $U$. Upon disorder averaging, the Gaussian pairings are represented by dashed lines joining pairs of dots. Each dashed line carries the correlator weight $W_0/V$ together with the momentum-conservation condition above. The same disorder realization appears in all Green functions in a product, so the pairings can also connect impurity insertions on different Green-function lines. The classification of the diagrams and the details of the bookkeeping are in Appendices~B and C.
 \tikzset{
   thickline/.style={very thick,->},
   thickadv/.style={very thick,<-},
@@ -62,11 +61,11 @@ Diagrammatically, a Green-function expansion is represented by solid segments, e
   vert/.style={rectangle,fill,inner sep=2.2pt},
   lab/.style={font=\small},
   coop/.style={draw,fill=gray!35,minimum width=1.3cm,minimum height=1.9cm,inner sep=0}
-}\\
+}
 
 Considering the leading order diagrams and averaging over the Gaussian pairings dresses each propagator with the arcs on its own line (Born approximation), so that
 $\overline G^{R/A}(\mathbf k)=1/(E-\epsilon_{\mathbf k}\pm\mathrm{i}\gamma)$
-with $\gamma=1/2\tau$ and $1/\tau=2\pi W_0\nu$, where $\nu$ is the density of states per spin and per volume. What remains of $\overline{\operatorname{Tr}[v_xG^Rv_xG^A]}$ are the pairings that join the two lines, in the weak-disorder limit $k_{\mathrm F}\ell\gg1$, only three families survive the pole-pinch criterion (See Appendix B): the bare bubble (class~1), the ladder of uncrossed rungs (class~2) and the maximally crossed series (class~3),
+with $\gamma=1/2\tau$ and $1/\tau=2\pi W_0\nu$, where $\nu$ is the density of states per spin and per volume. What remains of $\overline{\operatorname{Tr}[v_xG^Rv_xG^A]}$ are the pairings that join the two lines. In the weak-disorder limit $k_{\mathrm F}\ell\gg1$, with $\ell=v_{\mathrm F}\tau$ the mean free path, only three families survive the pole-pinch criterion (see Appendix~B): the bare bubble (class~1), the ladder of uncrossed rungs (class~2) and the maximally crossed series (class~3),
 \begin{equation}
     \sigma_{xx}^{\mathrm{dc}}\simeq\frac{e^2g_s}{2\pi V}\Big[S^{(0)}+\sum_{n\ge1}S^{(n)}_{\mathrm{ladder}}+\sum_{n\ge2}S^{(n)}_{\mathrm{cross}}\Big]=\frac{e^2g_s}{2\pi V}S
     \label{eq:wl_three}
@@ -134,11 +133,12 @@ with $\gamma=1/2\tau$ and $1/\tau=2\pi W_0\nu$, where $\nu$ is the density of st
  \end{scope}
 \end{tikzpicture}
 \end{figure}
-\\
-If we evaluate the first two classes: bare and ladder ones. The bare diagram gives the Drude conductivity $\sigma_D=ne^2\tau/m$, and the ladder, which can only change $\tau$ into the transport time $\tau_{\mathrm{tr}}$, adds nothing for white-noise disorder (see Appendix C). The leading quantum correction to the conductivity is therefore the next order term which is class-3 or maximally crossed diagrams, which we now sum in the next section.
+
+Evaluating the first two classes, the bare diagram gives the Drude conductivity $\sigma_D=ne^2\tau/m$, and the ladder, which can only change $\tau$ into the transport time $\tau_{\mathrm{tr}}$, adds nothing for white-noise disorder (see Appendix C). The leading quantum correction to the conductivity is therefore the maximally crossed series of class~3, which we sum below.
+
 \subsubsection*{The maximally crossed series and the Cooperon}
 
-The maximally crossed diagrams were first singled out by Langer and Neal, who found that they spoil the expansion of the impurity resistivity in powers of the impurity concentration \cite{LangerNeal1966,Bergmann1984}. Summing them is the key step of the whole calculation, so we carry it out in full, following the route of Refs.~\cite{BruusFlensberg,Coleman2015,LeeRamakrishnan1985} in our notation. Throughout, the system is in the ordinary, there is no magnetic field and no spin--orbit scattering, so that the Hamiltonian is time-reversal symmetric, and the dispersion has spatial inversion symmetry; $\epsilon_{-\mathbf k}=\epsilon_{\mathbf k}$.
+The maximally crossed diagrams were first singled out by Langer and Neal, who found that they spoil the expansion of the impurity resistivity in powers of the impurity concentration \cite{LangerNeal1966,Bergmann1984}. Summing them is the key step of the whole calculation, so we carry it out in full, following the route of Refs.~\cite{BruusFlensberg,Coleman2015,LeeRamakrishnan1985} in our notation. Throughout, the system is in the orthogonal (ordinary) class: there is no magnetic field and no spin--orbit scattering, so that the Hamiltonian is time-reversal symmetric, and the dispersion has spatial inversion symmetry; $\epsilon_{-\mathbf k}=\epsilon_{\mathbf k}$.
 
 Before summing diagrams, it helps to see what is being summed in a physical sense, in a simple picture. Take point-like impurities in a time-reversal-symmetric system, so that the propagator between two points is symmetric, $G(\mathbf r_i,\mathbf r_j)=G(\mathbf r_j,\mathbf r_i)$. An electron that enters with momentum $\mathbf k$ and leaves with $\mathbf k'$ after scattering from $n\ge2$ impurities at $\mathbf r_1,\dots,\mathbf r_n$ can visit them in this order or in the reverse order $n,\dots,1$ (Fig.~\ref{fig:wl_paths}). The two paths contain the same propagators and scattering strengths and differ only in the phases of the incoming and outgoing plane waves, so their amplitudes are related by
 \[
@@ -173,7 +173,8 @@ Their interference term is therefore proportional to $\cos\mathbf K\cdot(\mathbf
 \label{fig:wl_paths}
 \end{figure}
 
-The enhanced probability is for the electron to leave in the direction opposite to that of entry. An electron is then returned to the direction it came from more often than in the classical (Drude) picture, where the two paths add as separate probabilities, so it carries less current and the conductivity is lowered meaning the correction is negative. This sign will come out of the calculation below as the antiparallel current vertices of the two ends of the loop for small $\mathbf K$, $v_x(\mathbf k')\simeq-v_x(\mathbf k)$. The picture is only motivation, since the sum over all paths is done by the diagrams.\\
+The enhanced probability is for the electron to leave in the direction opposite to that of entry. An electron is then returned to the direction it came from more often than in the classical (Drude) picture, where the two paths add as separate probabilities, so it carries less current and the conductivity is lowered meaning the correction is negative. This sign will come out of the calculation below as the antiparallel current vertices of the two ends of the loop for small $\mathbf K$, $v_x(\mathbf k')\simeq-v_x(\mathbf k)$. The picture is only motivation, since the sum over all paths is done by the diagrams.
+
 Now take an arbitrary class-3 diagram with $n$ rungs and follow its momenta, using only the rules set up above. A dashed line joins two dots, and by the average $\overline{U_{\mathbf a\mathbf b}U_{\mathbf c\mathbf d}}\propto\delta_{\mathbf a-\mathbf b,\,\mathbf d-\mathbf c}$ the momentum transferred at one of its ends (out minus in) is minus the momentum transferred at the other. In the diagrams the retarded line runs from the left current vertex to the right one, and the advanced line runs the other way: its electron enters at the right vertex with $\mathbf k'$ and leaves at the left vertex with $\mathbf k$, so that the loop closes (Fig.~\ref{fig:wl_route}). Label the dots on the retarded line from the left by $u_1,\dots,u_n$ and its momenta by $\mathbf p_0=\mathbf k,\mathbf p_1,\dots,\mathbf p_n=\mathbf k'$, so that $u_j$ transfers $\mathbf q_j=\mathbf p_j-\mathbf p_{j-1}$, and label the dots on the advanced line from the left by $l_1,\dots,l_n$. In the maximally crossed diagram $u_j$ is joined to the $j$-th dot that the advanced electron meets, counting from the right, which is $l_{n+1-j}$, and that dot transfers $-\mathbf q_j$. After $j$ dots the advanced momentum is therefore
 \begin{equation}
 \mathbf k'-(\mathbf q_1+\dots+\mathbf q_j)=\mathbf k'-(\mathbf p_j-\mathbf k)=\mathbf K-\mathbf p_j ,
@@ -182,7 +183,8 @@ Now take an arbitrary class-3 diagram with $n$ rungs and follow its momenta, usi
 \end{equation}
 After all $n$ dots it equals $\mathbf K-\mathbf k'=\mathbf k$, which is the momentum with which the advanced line must reach the left vertex, so the routing is consistent. For two rungs it gives the single advanced segment between the rungs the momentum $\mathbf K-\mathbf p_1$. In the ladder, by contrast, $u_j$ is joined to the dot directly below it, and the same bookkeeping returns the retarded momenta, so both lines carry the same momentum in each position.
 
-We call the retarded propagator with $\mathbf p_j$ together with the advanced propagator with $\mathbf K-\mathbf p_j$ the $j$-th \emph{pair} (same colour in Fig.~\ref{fig:wl_route}). For $n$ rungs there are $n+1$ pairs, all with the same total momentum $\mathbf K$. In the crossed diagram the two members of a pair are not stacked: the outer pair $j=0$ is the retarded $\mathbf k$ at the left and the advanced $\mathbf K-\mathbf k=\mathbf k'$ at the right. Turning the lower line around stacks them, and the crossed rungs become the parallel rungs of a ladder with both lines running to the right. Such a ladder is a particle--particle ladder, like the pair susceptibility in superconductivity, and is called a Cooperon. The ladder of the uncrossed rungs is its particle--hole counterpart, the diffuson (the full enumeration of the pairings for small $n$ and the proof that other arrangements are suppressed are in Appendix~B and C, and are not needed to follow the argument).
+We call the retarded propagator with $\mathbf p_j$ together with the advanced one with $\mathbf K-\mathbf p_j$ the $j$-th \emph{pair}, $\mathcal P_{\mathbf p_j}(\mathbf K)=\overline G^R(\mathbf p_j)\,\overline G^A(\mathbf K-\mathbf p_j)$ (same colour in Fig.~\ref{fig:wl_route}). A diagram with $n$ rungs has $n+1$ pairs, all with the same total momentum $\mathbf K$. In the crossed diagram the two members of a pair are not stacked: the outer pair $j=0$ is the retarded $\mathbf k$ on the left and the advanced $\mathbf K-\mathbf k=\mathbf k'$ on the right. Turning the lower line around stacks them, and the crossed rungs become the parallel rungs of a ladder with both lines running to the right (Fig.~\ref{fig:wl_route}, right).
+
 \begin{figure}[ht]
 \centering
 \begin{tikzpicture}[scale=0.6]
@@ -217,6 +219,204 @@ We call the retarded propagator with $\mathbf p_j$ together with the advanced pr
   \node[lab,c3,below] at (8.4,-1.65) {\footnotesize$\mathbf K{-}\mathbf p_3$};
  \end{scope}
 \end{tikzpicture}
-\caption{Momentum routing for $n=3$ rungs, $\mathbf p_0=\mathbf k$, $\mathbf p_3=\mathbf k'$, $\mathbf K=\mathbf k+\mathbf k'$. Left: the maximally crossed diagram. The upper dots $u_j$ are joined to the lower dots $l_{4-j}$, and the advanced electron, running from right to left, has $\mathbf K-\mathbf p_j$ after $j$ dots. Right: the same diagram with the lower line turned around, a ladder with both lines running to the right (the Cooperon). Propagators with the same colour form a pair.}
+\caption{Momentum routing for $n=3$ rungs, $\mathbf p_0=\mathbf k$, $\mathbf p_3=\mathbf k'$, $\mathbf K=\mathbf k+\mathbf k'$. Left: the maximally crossed diagram. The upper dots $u_j$ are joined to the lower dots $l_{4-j}$, and the advanced electron, running from right to left, has $\mathbf K-\mathbf p_j$ after $j$ dots. Right: the ladder of the same diagram with the lower line turned around, both lines running to the right (the Cooperon). The current vertices are not drawn: they are not rungs, and are attached to the outer pairs when the ladder is closed (Fig.~\ref{fig:wl_bs}, bottom). Propagators with the same colour form a pair.}
 \label{fig:wl_route}
 \end{figure}
+
+Turning a line around changes the direction in which its momentum is counted, and here this turns a sum into a difference. Because $\epsilon_{-\mathbf q}=\epsilon_{\mathbf q}$, $\overline G^A(\mathbf K-\mathbf p)=\overline G^A(\mathbf p-\mathbf K)$, and $\mathbf p-\mathbf K$ is the momentum of the same line counted along its new direction. A column of the untwisted ladder is then $\overline G^R(\mathbf p)\,\overline G^A(\mathbf p-\mathbf K)$, which, after the shift $\mathbf p\to\mathbf p+\mathbf K$, is the column $\overline G^R(\mathbf p+\mathbf q)\,\overline G^A(\mathbf p)$ of the diffuson of C.3 with the offset $\mathbf q=\mathbf K$. The pair sum of the crossed series is therefore the pair sum of the diffuson evaluated at $q=K$, and the Cooperon is the diffuson ladder with its wave vector renamed. It is a particle--particle ladder, since the momenta of a pair add up to $\mathbf K$, where the diffuson is particle--hole. The renaming uses time-reversal symmetry: in a magnetic field a path and its reverse no longer have equal amplitudes and the identification fails.
+
+The two ladders differ in what the wave vector is. In the diffuson $\mathbf q$ is the momentum of the probe, which we let go to zero, and the coupling of the current vertices $v_x(\mathbf k)\,v_x(\mathbf k)$ to the ladder vanishes with $q_x$ (C.3). In the Cooperon $\mathbf K=\mathbf k+\mathbf k'$ is the sum of the momenta in and out and is summed over, and its pole at $K=0$ is the backscattering configuration $\mathbf k'=-\mathbf k$, where $v_x(\mathbf k')=-v_x(\mathbf k)$ and the vertex factor $-v_x^2$ does not vanish. The same function of the wave vector therefore gives zero in one case and the weak-localization correction in the other.
+
+
+We now write the series out as in C.2. Between two rungs the pair is fixed by Eq.~\eqref{eq:wl_route}, each dashed line carries $W_0/V$, and the current vertices join the retarded line of column $0$ to the advanced line of column $n$ (both carry $\mathbf k$) and column $n$ to column $0$ (both carry $\mathbf k'$), so they give $v_x(\mathbf p_0)\,v_x(\mathbf p_n)$ and are not rungs. For two and three rungs (Fig.~\ref{fig:wl_route} and the diagrams after Eq.~\eqref{eq:wl_three}),
+\[
+\begin{aligned}
+S^{(2)}_{\mathrm{cross}}&=\Big(\frac{W_0}{V}\Big)^{2}\sum_{\mathbf p_0,\mathbf p_1,\mathbf p_2}
+v_x(\mathbf p_0)\,\mathcal P_{\mathbf p_0}\mathcal P_{\mathbf p_1}\mathcal P_{\mathbf p_2}\,v_x(\mathbf p_2),\\
+S^{(3)}_{\mathrm{cross}}&=\Big(\frac{W_0}{V}\Big)^{3}\sum_{\mathbf p_0,\dots,\mathbf p_3}
+v_x(\mathbf p_0)\,\mathcal P_{\mathbf p_0}\mathcal P_{\mathbf p_1}\mathcal P_{\mathbf p_2}\mathcal P_{\mathbf p_3}\,v_x(\mathbf p_3),
+\end{aligned}
+\]
+with $\mathbf K=\mathbf p_0+\mathbf p_n$, so that each further rung adds a momentum sum, a weight $W_0/V$ and a pair. We collect the inner part of the ladder, with the outer pairs and the vertices removed, into $\Gamma_C(\mathbf K)$,
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+ \tikzset{tl/.style={very thick,->},ta/.style={very thick,->}}
+ \node at (-0.6,-0.7) {$\Gamma_C=$};
+ \begin{scope}[xshift=1.0cm]
+  \draw[tl] (0,0)--(2.4,0); \draw[ta] (0,-1.4)--(2.4,-1.4);
+  \draw[imp] (1.2,0)--(1.2,-1.4);\node[dot] at (1.2,0){};\node[dot] at (1.2,-1.4){};
+  \node at (3.5,-0.7){$+$};
+ \end{scope}
+ \begin{scope}[xshift=5.8cm]
+  \draw[tl] (0,0)--(4.6,0); \draw[ta] (0,-1.4)--(4.6,-1.4);
+  \foreach \x in {1.0,3.6}{\draw[imp] (\x,0)--(\x,-1.4);\node[dot] at (\x,0){};\node[dot] at (\x,-1.4){};}
+  \node[lab] at (2.3,0.45){$\mathbf p$};\node[lab] at (2.3,-1.85){$\mathbf K-\mathbf p$};
+  \node at (5.8,-0.7){$+$};
+ \end{scope}
+ \begin{scope}[xshift=12.8cm]
+  \draw[tl] (0,0)--(6.6,0); \draw[ta] (0,-1.4)--(6.6,-1.4);
+  \foreach \x in {1.0,3.3,5.6}{\draw[imp] (\x,0)--(\x,-1.4);\node[dot] at (\x,0){};\node[dot] at (\x,-1.4){};}
+  \node[lab] at (2.15,0.45){$\mathbf p$};\node[lab] at (2.15,-1.85){$\mathbf K-\mathbf p$};
+  \node[lab] at (4.45,0.45){$\mathbf p'$};\node[lab] at (4.45,-1.85){$\mathbf K-\mathbf p'$};
+  \node at (7.9,-0.7){$+\ \cdots$};
+ \end{scope}
+\end{tikzpicture}
+\end{center}
+\[
+\Gamma_C(\mathbf K)=W_0+\frac{W_0^2}{V}\sum_{\mathbf p}\mathcal P_{\mathbf p}
++\frac{W_0^3}{V^2}\sum_{\mathbf p,\mathbf p'}\mathcal P_{\mathbf p}\mathcal P_{\mathbf p'}+\cdots ,
+\]
+and factoring the first rung out of every term after the first leaves the same series again, so
+\begin{equation}
+    \Gamma_C(\mathbf K)=W_0+W_0\,\Lambda_{\mathbf K}\,\Gamma_C(\mathbf K),\qquad
+    \Lambda_{\mathbf K}=\frac1V\sum_{\mathbf p}\mathcal P_{\mathbf p}(\mathbf K),
+    \label{eq:wl_BS}
+\end{equation}
+the Bethe--Salpeter equation of the Cooperon (Fig.~\ref{fig:wl_bs}, top), whose solution is
+\begin{equation}
+    \Gamma_C(\mathbf K)=\frac{W_0}{1-W_0\Lambda_{\mathbf K}}=W_0\sum_{n\ge1}\big(W_0\Lambda_{\mathbf K}\big)^{n-1}.
+    \label{eq:wl_Gamma}
+\end{equation}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.5]
+ \tikzset{tl/.style={very thick,->},ta/.style={very thick,->}}
+ % ---------- top: the equation
+ \begin{scope}
+  \node[coop,minimum width=1.3cm,minimum height=1.4cm] at (0,0) {$\Gamma_C$};
+  \node at (1.8,0) {$=$};
+  \begin{scope}[xshift=2.4cm,yshift=0.7cm]
+   \draw[tl] (0,0)--(1.8,0); \draw[ta] (0,-1.4)--(1.8,-1.4);
+   \draw[imp] (0.9,0)--(0.9,-1.4);\node[dot] at (0.9,0){};\node[dot] at (0.9,-1.4){};
+   \node at (2.6,-0.7){$+$};
+  \end{scope}
+  \begin{scope}[xshift=5.9cm,yshift=0.7cm]
+   \draw[tl] (0,0)--(7.2,0); \draw[ta] (0,-1.4)--(7.2,-1.4);
+   \node[coop,minimum width=1.3cm,minimum height=1.4cm] at (1.0,-0.7) {$\Gamma_C$};
+   \draw[imp] (6.0,0)--(6.0,-1.4);\node[dot] at (6.0,0){};\node[dot] at (6.0,-1.4){};
+   \node[lab] at (3.8,0.45){$\mathbf p$};\node[lab] at (3.8,-1.85){$\mathbf K-\mathbf p$};
+   \node[lab] at (9.2,-0.7){$\big(\tfrac1V\sum_{\mathbf p}\big)$};
+  \end{scope}
+ \end{scope}
+ % ---------- bottom: closing
+ \begin{scope}[yshift=-4.4cm]
+  \node[lab,anchor=east] at (7.0,0){$\displaystyle\sum_{n\ge2}S^{(n)}_{\mathrm{cross}}\;=$};
+  \begin{scope}[xshift=8.2cm,yshift=0.7cm]
+   \draw[thickline] (0,0)--(7.0,0);\draw[thickadv] (0,-1.4)--(7.0,-1.4);
+   \draw[gray] (0,0)--(0,-1.4);\draw[gray] (7.0,0)--(7.0,-1.4);
+   \node[vert] at (0,-0.7) {};\node[vert] at (7.0,-0.7) {};
+   \node[coop,minimum height=1.4cm] at (3.5,-0.7) {$C$};
+   \node[lab,above] at (1.4,0.05) {$\mathbf k$};
+   \node[lab,above] at (5.6,0.05) {$\mathbf k'$};
+  \end{scope}
+ \end{scope}
+\end{tikzpicture}
+\caption{The Cooperon equation. Top: a ladder is a single rung or a ladder with one more pair and rung (Eq.~\eqref{eq:wl_BS}). Bottom: closed with the outer pairs and the current vertices it gives the maximally crossed series, with $C=\Gamma_C-W_0$.}
+\label{fig:wl_bs}
+\end{figure}
+
+Closing $\Gamma_C$ with the outer pairs and the vertices (Fig.~\ref{fig:wl_bs}, bottom) gives the series of $n$ rungs. The outer pairs $\overline G^R(\mathbf k)\overline G^A(\mathbf k')$ and $\overline G^R(\mathbf k')\overline G^A(\mathbf k)$ are the same four propagators as $\overline G^R(\mathbf k)\overline G^A(\mathbf k)$ and $\overline G^R(\mathbf k')\overline G^A(\mathbf k')$, the two bubble pairs at the vertices, and do not depend on $n$; the $n-1$ inner sums give $(V\Lambda_{\mathbf K})^{n-1}$. The one-rung term is the single-rung ladder of class~2 and is regular as $K\to0$, so it does not change the singular part we are after; class~3 starts at $n=2$ and $C=\Gamma_C-W_0$ replaces $\Gamma_C$:
+\begin{equation}
+    \sum_{n\ge2}S^{(n)}_{\mathrm{cross}}=\frac1V\sum_{\mathbf k,\mathbf k'}v_x(\mathbf k)\,v_x(\mathbf k')\,
+    \overline G^R(\mathbf k)\overline G^A(\mathbf k)\,\overline G^R(\mathbf k')\overline G^A(\mathbf k')\;C(\mathbf K),
+    \label{eq:wl_Cooperon}
+\end{equation}
+with $C(\mathbf K)=\Gamma_C-W_0=W_0\,(W_0\Lambda_{\mathbf K})/(1-W_0\Lambda_{\mathbf K})$.
+
+To evaluate $\Lambda_{\mathbf K}$ write $\xi=\xi_{\mathbf p}=\epsilon_{\mathbf p}-E$ and $\delta=\mathbf v\!\cdot\!\mathbf K$. For $K\ell\ll1$ we have $\xi_{\mathbf K-\mathbf p}=\xi_{\mathbf p-\mathbf K}\simeq\xi-\delta$ and
+\[
+\mathcal P_{\mathbf p}=\frac{1}{(-\xi+\mathrm{i}\gamma)(-\xi+\delta-\mathrm{i}\gamma)} ,
+\]
+with poles at $\xi=\mathrm{i}\gamma$ and $\xi=\delta-\mathrm{i}\gamma$ on opposite sides of the real axis, only $2\gamma$ apart at $\delta=0$ (Fig.~\ref{fig:wl_poles}). Closing the contour in the upper half-plane, where only the first lies, the residue of $\overline G^R$ is $-1$ and the advanced factor there is $1/(\delta-2\mathrm{i}\gamma)$, so
+\[
+\int\mathrm{d}\xi\,\mathcal P_{\mathbf p}
+=\frac{-2\pi\mathrm{i}}{\delta-2\mathrm{i}\gamma}
+=\frac{2\pi\tau}{1+\mathrm{i}\tau\,\mathbf v\!\cdot\!\mathbf K}.
+\]
+This is the pinched value $2\pi\tau$ at $\mathbf K=0$, and it falls off once $v_{\mathrm F}K\gtrsim1/\tau$. In the other pairings of the dots the advanced momentum of some line is not tied to the retarded one, so $\delta\sim v_{\mathrm F}k_{\mathrm F}\gg\gamma$ there and the pair is smaller by $1/k_{\mathrm F}\ell$ (B.4).
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.8]
+ % left: R and A
+ \begin{scope}
+  \draw[->] (-2.6,0)--(2.9,0) node[right]{$\mathrm{Re}\,\xi$};
+  \draw[->] (0,-1.6)--(0,1.8) node[above]{$\mathrm{Im}\,\xi$};
+  \node[red!70!black] at (0,1.0){$\boldsymbol{\times}$};\node[red!70!black,right] at (0.1,1.0){$\mathrm{i}\gamma$};
+  \node[blue!70!black] at (1.0,-1.0){$\boldsymbol{\times}$};\node[blue!70!black,right] at (1.1,-1.0){$\delta-\mathrm{i}\gamma$};
+  \draw[thick,->] (-2.0,0) arc (180:100:2.0);\draw[thick] (2.0,0) arc (0:100:2.0);
+  \node[lab] at (0,-2.6){retarded--advanced pair};
+ \end{scope}
+\end{tikzpicture}
+\caption{Energy integral over a retarded--advanced pair: the poles lie on opposite sides of the contour and are $2\gamma$ apart at $\delta=0$, so they pinch it.}
+\label{fig:wl_poles}
+\end{figure}
+
+With the momentum-sum rule, $\frac1V\sum_{\mathbf p}\to\nu\int\mathrm{d}\xi\,\langle\cdots\rangle_{\hat{\mathbf p}}$,
+\[
+\Lambda_{\mathbf K}=2\pi\nu\tau\Big\langle\frac{1}{1+\mathrm{i}\tau\,\mathbf v\!\cdot\!\mathbf K}\Big\rangle_{\hat{\mathbf p}} .
+\]
+The angular average is $1/\sqrt{1+(K\ell)^2}$ in $d=2$ and $\arctan(K\ell)/K\ell$ in $d=3$, and for $K\ell\ll1$ in any dimension it is $1-\tau^2\langle(\mathbf v\!\cdot\!\mathbf K)^2\rangle=1-D\tau K^2$, since the term linear in $\mathbf v\!\cdot\!\mathbf K$ averages to zero, $\langle(\mathbf v\!\cdot\!\mathbf K)^2\rangle=v_{\mathrm F}^2K^2/d$, and with the diffusion constant $D=v_{\mathrm F}^2\tau/d$ of C.1, $D\tau=\ell^2/d$. With $1/\tau=2\pi\nu W_0$, $1-W_0\Lambda_{\mathbf K}\simeq D\tau K^2$ and the Cooperon has a pole at $K=0$,
+\begin{equation}
+    C(\mathbf K)\simeq\frac{W_0}{D\tau K^2}\qquad(K\ell\ll1).
+    \label{eq:wl_pole}
+\end{equation}
+Each pair--rung unit $W_0\Lambda_{\mathbf K}$ equals $1$ at $\mathbf K=0$, so the series diverges there.
+
+For $K\ell\ll1$ the right vertex has $\mathbf k'=\mathbf K-\mathbf k\simeq-\mathbf k$, so $v_x(\mathbf k')\simeq-v_x(\mathbf k)$, and since the energies of $\mathbf k'$ and $-\mathbf k$ differ by much less than $\gamma$ both outer pairs equal $1/(\xi_{\mathbf k}^2+\gamma^2)$. The sum over $\mathbf k$ is then
+\[
+\begin{split}
+\sum_{\mathbf k}v_x(\mathbf k)\,v_x(\mathbf k')\big[\overline G^R\overline G^A\big]_{\mathbf k}\big[\overline G^R\overline G^A\big]_{\mathbf k'}
+&\simeq-V\nu\,\frac{v_{\mathrm F}^2}{d}\int\mathrm{d}\xi\,\frac{1}{(\xi^2+\gamma^2)^2}\\
+&=-V\nu\,\frac{v_{\mathrm F}^2}{d}\,\frac{\pi}{2\gamma^3}=-4\pi V\nu D\tau^2 ,
+\end{split}
+\]
+Putting this and Eq.~\eqref{eq:wl_pole} into Eq.~\eqref{eq:wl_Cooperon}, and keeping the infrared-singular part, where both hold,
+\[
+\sum_{n\ge2}S^{(n)}_{\mathrm{cross}}\simeq-\frac1V\sum_{\mathbf K}\frac{W_0}{D\tau K^2}\,4\pi V\nu D\tau^2
+=-4\pi\nu W_0\tau\sum_{\mathbf K}\frac1{K^2}=-2V\int\frac{\mathrm{d}^dK}{(2\pi)^d}\frac1{K^2},
+\]
+so that $W_0$, $\nu$, $D$ and $\tau$ drop out. With the prefactor $e^2g_s/2\pi V$ of Eq.~\eqref{eq:wl_three}, $g_s=2$ and $\hbar$ restored,
+\begin{equation}
+    \delta\sigma=-\frac{2e^2}{\pi\hbar}\int\frac{\mathrm{d}^dK}{(2\pi)^d}\frac{1}{K^2}.
+    \label{eq:wl_deltasigma}
+\end{equation}
+The pole does not by itself limit the integral. The limits come from where the approximations stop holding: the diffusion form of the Cooperon and $\mathbf k'\simeq-\mathbf k$ are valid for $K\ell\ll1$, so the integral is cut off at $K\sim1/\ell$, and the larger $K$ that the diffusion form does not describe only changes the Drude conductivity by a small non-universal amount. At small $K$ it is cut off by the sample size, $K\gtrsim1/L$, or by whatever destroys the phase coherence of the time-reversed paths, such as the phase-breaking length $L_\varphi$.
+
+Writing $1/K^2=D\int_0^\infty\mathrm{d}t\,e^{-DK^2t}$ turns this into an integral over time, with $t\sim\tau$ for the $1/\ell$ cutoff and $t_{\mathrm{coh}}\sim L_{\mathrm{coh}}^2/D$ for the infrared one, $L_{\mathrm{coh}}$ being the smaller of $L$ and $L_\varphi$:
+\[
+\delta\sigma\simeq-\frac{2e^2D}{\pi\hbar}\int_{\tau}^{t_{\mathrm{coh}}}\mathrm{d}t\,(4\pi Dt)^{-d/2} .
+\]
+The integrand is the classical probability density for a diffusing particle to be back at its starting point, integrated over the times for which the motion is still coherent. This is the interference of the time-reversed paths pictured at the start, which is constructive only for paths that close on themselves, and it lowers the conductivity.
+
+\subsection*{Size dependence of the conductance}
+
+Cutting the integral of Eq.~\eqref{eq:wl_deltasigma} at $1/L$ and $1/\ell$,
+\[
+\delta\sigma(L)=-\frac{2e^2}{\pi\hbar}\,\frac{S_d}{(2\pi)^d}\int_{1/L}^{1/\ell}\mathrm{d}K\,K^{d-3},
+\]
+where $S_d$ is the area of the unit sphere ($S_1=2$, $S_2=2\pi$, $S_3=4\pi$). The dimensionless conductance of the previous sections is $g(L)=\hbar\sigma(L)L^{d-2}/e^2$, so
+\[
+\beta(g)=\frac{\mathrm{d}\ln g}{\mathrm{d}\ln L}=(d-2)+\frac{1}{\sigma}\frac{\mathrm{d}\sigma}{\mathrm{d}\ln L}.
+\]
+Only the lower limit of the integral depends on $L$, and $\mathrm{d}(1/L)/\mathrm{d}\ln L=-1/L$ gives
+\[
+\frac{\mathrm{d}\sigma}{\mathrm{d}\ln L}=\frac{\mathrm{d}\,\delta\sigma}{\mathrm{d}\ln L}=-\frac{2e^2}{\pi\hbar}\frac{S_d}{(2\pi)^d}\,L^{2-d},
+\]
+since $K^{d-3}$ at $K=1/L$ times $1/L$ is $L^{2-d}$. For $g\gg1$ the conductivity in the denominator is $\sigma\simeq e^2g/\hbar L^{d-2}$, and the powers of $L$ cancel:
+\begin{equation}
+    \beta(g)\simeq(d-2)-\frac{a_d}{g},\qquad a_d=\frac{2}{\pi}\frac{S_d}{(2\pi)^d},
+    \label{eq:wl_beta}
+\end{equation}
+with $a_1=2/\pi^2$, $a_2=1/\pi^2$, $a_3=1/\pi^3$. The first term is the ohmic value of Eq.~\eqref{eq:ohmic_regime}. The second is the interference correction, which is always negative: coherent backscattering never raises the conductance.
+
+In $d=2$ the integral is logarithmic,
+\[
+g(L)=g(\ell)-\frac1{\pi^2}\ln\frac{L}{\ell}
+\]
+(the same logarithm was obtained diagrammatically by Gor'kov, Larkin and Khmel'nitskii \cite{GLK1979}), so $\beta=-1/(\pi^2g)$ is negative wherever the expansion holds. The conductance of a larger sample is smaller, with no scale at which the decrease stops. Setting $g\sim1$ gives a length $\xi_{\mathrm{loc}}\sim\ell\,e^{\pi^2g(\ell)}$, where the perturbation theory fails; this is exponentially large for a good metal and is the scale beyond which the states are localized, as in Eq.~\eqref{eq:exp_regime}. If $\beta(g)$ is continuous and monotonic, as AALR assume, then in $d=2$ it rises from $-\infty$ at $g\to0$, where $\beta\simeq\ln g$, and approaches $0$ from below at large $g$, so it never vanishes: there is no fixed point and no metallic phase, and every state is localized for any weak disorder. This is the central result of AALR that we reproduced.
+
+In $d=3$ the integral is dominated by the upper limit $1/\ell$, so the size-dependent part of $\delta\sigma$ is only $+e^2/\pi^3\hbar L$ and $\beta=1-a_3/g$ is positive at large $g$. At small $g$ it is negative, so $\beta$ crosses zero at some $g_c$, an unstable fixed point separating the metal ($g>g_c$) from the insulator ($g<g_c$). Its existence follows from continuity and not from Eq.~\eqref{eq:wl_beta}, since $a_3$ puts the zero at $g\sim1/\pi^3\ll1$, deep in the region where the expansion fails; for the same reason the critical exponent is not predicted here. In $d=1$ the correction is of order $g$ itself already at $L\sim\ell$, and all states are localized.
+
+The result holds for a time-reversal-symmetric, non-interacting system at zero temperature without spin--orbit scattering. A magnetic field cuts the Cooperon off at a finite $K$ and removes the logarithm, and spin--orbit scattering changes the sign of the correction \cite{Hikami1980}. This is why the scaling function depends on the symmetry, as noted in the scaling-theory section.
