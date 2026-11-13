@@ -353,10 +353,10 @@ that is $u_1=U_{\mathbf p\mathbf k}$,
 $u_2=U_{\mathbf k'\mathbf p}$ (recall that
 $U_{\mathbf a\mathbf b}$ scatters $\mathbf b\to\mathbf a$).
 The advanced line runs to the left, so from the right vertex it
-meets $l_2$ first ($\mathbf k'\to\mathbf q$) and then $l_1$
-($\mathbf q\to\mathbf k$):
-$l_2=U_{\mathbf q\mathbf k'}$,
-$l_1=U_{\mathbf k\mathbf q}$. Here $\mathbf q$ is the momentum
+meets $l_2$ first ($\mathbf k'\to\mathbf a$) and then $l_1$
+($\mathbf a\to\mathbf k$):
+$l_2=U_{\mathbf a\mathbf k'}$,
+$l_1=U_{\mathbf k\mathbf a}$. Here $\mathbf a$ is the momentum
 of the advanced line between its two dots. A pairing is named by
 the dots it joins: $(u_1l_1)$ is a dashed line from the upper
 left dot to the lower left dot. The pair rule of B.1 says that
@@ -364,20 +364,20 @@ the momenta transferred at the two paired dots are equal and
 opposite, where the transfer at a dot is out minus in
 ($\mathbf p-\mathbf k$ at $u_1$,
 $\mathbf k'-\mathbf p$ at $u_2$,
-$\mathbf k-\mathbf q$ at $l_1$,
-$\mathbf q-\mathbf k'$ at $l_2$). This fixes $\mathbf q$:
+$\mathbf k-\mathbf a$ at $l_1$,
+$\mathbf a-\mathbf k'$ at $l_2$). This fixes $\mathbf a$:
 \begin{align*}
 &\text{uncrossed } (u_1l_1)(u_2l_2):
 \quad
-(\mathbf p-\mathbf k)+(\mathbf k-\mathbf q)=0
-\ \Rightarrow\ \mathbf q=\mathbf p,\\
+(\mathbf p-\mathbf k)+(\mathbf k-\mathbf a)=0
+\ \Rightarrow\ \mathbf a=\mathbf p,\\
 &\text{crossed } (u_1l_2)(u_2l_1):
 \quad
-(\mathbf p-\mathbf k)+(\mathbf q-\mathbf k')=0
-\ \Rightarrow\ \mathbf q=\mathbf K-\mathbf p,
+(\mathbf p-\mathbf k)+(\mathbf a-\mathbf k')=0
+\ \Rightarrow\ \mathbf a=\mathbf K-\mathbf p,
 \quad \mathbf K=\mathbf k+\mathbf k'.
 \end{align*}
-(The second pair of each line gives the same $\mathbf q$.)
+(The second pair of each line gives the same $\mathbf a$.)
 So the two lines carry the same momentum between uncrossed
 rungs, and opposite momenta, up to the constant $\mathbf K$,
 between crossed rungs.
@@ -502,7 +502,7 @@ $\mathbf k'=-\mathbf k$.
   \draw[imp] (u2)--(l2);
   \nodelab
   \node[lab,above] at (1.9,0.35) {$\mathbf p$};
-  \node[lab,below] at (1.9,-1.75) {$\mathbf p=\mathbf q$};
+  \node[lab,below] at (1.9,-1.75) {$\mathbf p=\mathbf a$};
   \node[lab] at (1.9,-3.0) {\textbf{class 2}: uncrossed rungs};
  \end{scope}
 
@@ -522,7 +522,7 @@ $\mathbf k'=-\mathbf k$.
   \draw[imp] (u2)--(l1);
   \nodelab
   \node[lab,above] at (1.9,0.35) {$\mathbf p$};
-  \node[lab,below] at (1.9,-1.75) {$\mathbf q=\mathbf K-\mathbf p$};
+  \node[lab,below] at (1.9,-1.75) {$\mathbf a=\mathbf K-\mathbf p$};
   \node[lab] at (1.9,-3.0) {\textbf{class 3}: crossed rungs};
  \end{scope}
 \end{tikzpicture}
@@ -530,7 +530,7 @@ $\mathbf k'=-\mathbf k$.
 The dots are named $u_1,u_2$ (upper line) and $l_1,l_2$ (lower
 line) from the left; $\mathbf k,\mathbf k'$ are the momenta at
 the two current vertices, $\mathbf p$ is the momentum between
-the dots of the upper line and $\mathbf q$ between those of the
+the dots of the upper line and $\mathbf a$ between those of the
 lower line. Class~1: every dashed line joins two dots of the
 same line. Class~2: dashed lines join the two lines without
 crossing, so both lines carry the same momentum $\mathbf p$
