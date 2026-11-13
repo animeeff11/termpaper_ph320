@@ -1,6 +1,6 @@
-
 \documentclass[12pt,a4paper]{article}
 \usepackage{tikz}
+
 % Page layout
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
@@ -11,13 +11,13 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{hyperref}
-\newcommand{\avg}[1]{\langle #1 \rangle}
-\usepackage{amsmath,amssymb}   % if not already loaded
 
+% Shorthand used in the text and appendices
 \providecommand{\ii}{\mathrm{i}}
 \providecommand{\dd}{\mathrm{d}}
 \providecommand{\avg}[1]{\langle #1 \rangle}
 \providecommand{\Tr}{\operatorname{Tr}}
+
 % Numbered citations and bibliography
 \usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
 \addbibresource{references.bib}
@@ -40,9 +40,14 @@
 % Import each section in the required order
 \input{sections/01_introduction}
 \input{sections/02_thouless}
-\input{sections/03_scaling theory_intro}
+\input{sections/03_scaling_theory_intro}
 \input{sections/04_perturbation}
-\input{sections/appendices}
+
 \printbibliography
+
+% Appendices
+\appendix
+\input{sections/Kubo_conductivity}   % Appendix A: Kubo formula
+\input{sections/Appendix b}      % Appendix B: disorder averaging and diagrams
 
 \end{document}

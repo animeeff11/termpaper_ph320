@@ -1,0 +1,81 @@
+% --- helper commands (self-contained; safe if already defined) ---
+\providecommand{\ii}{\mathrm{i}}
+\providecommand{\dd}{\mathrm{d}}
+\providecommand{\avg}[1]{\langle #1 \rangle}
+\providecommand{\Tr}{\operatorname{Tr}}
+\newpage
+\section*{Appendix A: Kubo formula for conductivity}\label{app:kubo}
+
+\noindent This appendix derives the Kubo formula for the conductivity used in the main text~\cite{Kubo1957}, first for a general system by linear response (A.1--A.2), then for non-interacting electrons in a fixed disordered sample, where it takes the Kubo--Greenwood form and can be written with Green functions (A.3--A.5). The derivation of A.1--A.2 follows Bruus and Flensberg~\cite{BruusFlensberg}, Ch.~6 (Secs.~6.1--6.2). Notation: $\hbar=1$, $\avg{\cdots}_0=\Tr[\rho_0\cdots]$ with $\rho_0=e^{-\beta H_0}/Z_0$, and a tilde denotes the interaction picture.
+
+\subsection*{A.1\quad General linear response}
+Let $H(t)=H_0+H'(t)\theta(t-t_0)$. The thermal weights $e^{-\beta E_n}/Z_0$ of the initial states $|n\rangle$ stay fixed while the states evolve, so $\avg{A(t)}=Z_0^{-1}\sum_n e^{-\beta E_n}\langle n(t)|A|n(t)\rangle$.
+
+Define $|\tilde n(t)\rangle=e^{\ii H_0t}|n(t)\rangle$ and $\tilde O(t)=e^{\ii H_0t}Oe^{-\ii H_0t}$. Differentiating and using $\ii\partial_t|n\rangle=(H_0+H')|n\rangle$, the $\pm H_0$ terms cancel:
+\begin{equation}
+\ii\partial_t|\tilde n(t)\rangle=\tilde H'(t)|\tilde n(t)\rangle .
+\end{equation}
+Hence $|\tilde n(t)\rangle=\tilde U(t,t_0)|\tilde n(t_0)\rangle$ with $\tilde U=1-\ii\int_{t_0}^t\dd t'\,\tilde H'(t')\tilde U(t',t_0)$, and to first order $\tilde U\simeq1-\ii\int_{t_0}^t\dd t'\tilde H'(t')$. The phases $e^{\pm\ii E_nt_0}$ of ket and bra cancel, so
+\begin{equation}
+\avg{A(t)}=\big\langle\tilde U^\dagger\tilde A(t)\tilde U\big\rangle_0
+=\avg{A}_0-\ii\int_{t_0}^{t}\dd t'\,\avg{[\tilde A(t),\tilde H'(t')]}_0+O(H'^2).
+\label{eq:Kb}
+\end{equation}
+(The zeroth-order term is $\avg{A}_0$ by cyclicity of the trace and $[\rho_0,H_0]=0$.) With
+\begin{equation}
+C^R_{AH'}(t,t')=-\ii\theta(t-t')\avg{[\tilde A(t),\tilde H'(t')]}_0 ,
+\end{equation}
+Eq.~\eqref{eq:Kb} reads $\delta\avg{A(t)}=\int\dd t'\,C^R_{AH'}(t,t')e^{-\eta(t-t')}$, with $\eta\to0^+$ (adiabatic switching). Conjugating the trace by $e^{\pm\ii H_0t'}$ shows $C^R$ depends only on $t-t'$. For $H'(t)=\int\frac{\dd\omega}{2\pi}e^{-\ii\omega t}H'_\omega$, setting $t_0\to-\infty$ and $\tau=t-t'$ gives
+\begin{equation}
+\delta\avg{A_\omega}=C^R_{AH'_\omega}(\omega),\qquad
+C^R(\omega)=\int_{-\infty}^{\infty}\dd\tau\,e^{\ii(\omega+\ii\eta)\tau}C^R(\tau).
+\end{equation}
+
+\subsection*{A.2\quad Conductivity}
+For charge $-e$ and gauge $\phi_{\rm ext}=0$, $\mathbf{E}=-\partial_t\mathbf{A}_{\rm ext}$ gives $\mathbf{A}_{\rm ext}=\mathbf{E}/(\ii\omega)$, and to linear order $H_{\rm ext}=e\int\dd\mathbf{r}\,\mathbf{J}_0\cdot\mathbf{A}_{\rm ext}$. The current operator has a paramagnetic and a diamagnetic part, $\mathbf{J}=\mathbf{J}_0+\frac em\mathbf{A}_{\rm ext}\rho$; the $A^2$ term in $H$ is second order and is dropped. Then
+\begin{align}
+\avg{J_e^\alpha}=-e\avg{J^\alpha}
+&=-e\int\dd\mathbf{r}'\sum_\beta C^R_{J_0^\alpha J_0^\beta}\frac{e}{\ii\omega}E^\beta-\frac{e^2}{m}\frac{n}{\ii\omega}E^\alpha ,
+\end{align}
+where $\avg{\mathbf{J}_0}_0=0$ was used for the first term and $\avg\rho\to n$ for the second. Using $-1/\ii=\ii$ and comparing with $J_e^\alpha=\int\dd\mathbf{r}'\sigma^{\alpha\beta}E^\beta$,
+\begin{equation}
+\boxed{\sigma^{\alpha\beta}(\mathbf{r},\mathbf{r}',\omega)=\frac{\ii e^2}{\omega}\,\Pi^R_{\alpha\beta}(\mathbf{r},\mathbf{r}',\omega)+\frac{\ii e^2n(\mathbf{r})}{m\omega}\,\delta(\mathbf{r}-\mathbf{r}')\delta_{\alpha\beta}},
+\label{eq:Ksigma}
+\end{equation}
+with $\Pi^R_{\alpha\beta}=-\ii\theta(t-t')\avg{[\tilde J_0^\alpha(\mathbf{r},t),\tilde J_0^\beta(\mathbf{r}',t')]}_0$ the retarded current--current correlator.
+
+As a check, take clean free electrons. The total current is proportional to the conserved total momentum, so $[\tilde{\mathbf{J}}_{\rm tot}(t),\mathbf{J}_{\rm tot}]=0$ and $\Pi^R=0$. Then $\sigma=\ii ne^2/(m\omega)$, which is the $\omega\tau\to\infty$ limit of the Drude form $\sigma=(ne^2\tau/m)/(1-\ii\omega\tau)$. With disorder the momentum is no longer conserved, $\Pi^R\neq0$, and the finite $\tau$ must come out of $\Pi^R$; this is what the next subsections set up.
+
+\subsection*{A.3\quad Free electrons in a static potential}
+Now let $H_0=\sum_a\varepsilon_a c_a^\dagger c_a$ describe non-interacting electrons in one fixed disorder sample, with exact eigenstates $|a\rangle$ of the one-body Hamiltonian $h=p^2/2m+U(\mathbf r)$, where $U$ is the potential of one fixed impurity configuration. The total paramagnetic current along $x$ is $J_x=\sum_{ab}(v_x)_{ab}\,c_a^\dagger c_b$, where $v_x=p_x/m=\partial_{k_x}h$ is the velocity operator (the factor $-e$ is kept outside, as in Eq.~\eqref{eq:Ksigma}). Here $a,b$ label orbital states; the spin sum only gives a factor $g_s$, which we add in A.4. In the interaction picture $\tilde J_x(t)=\sum_{ab}(v_x)_{ab}e^{\ii(\varepsilon_a-\varepsilon_b)t}c_a^\dagger c_b$. Wick's theorem with $\avg{c_a^\dagger c_b}_0=f_a\delta_{ab}$ gives, for the two orderings (the disconnected pairing $\avg{J}_0\avg{J}_0$ is the same in both and drops out of the commutator),
+\begin{align}
+\avg{\tilde J_x(t)J_x}_0&=\sum_{ab}|v_{ab}|^2e^{\ii(\varepsilon_a-\varepsilon_b)t}f_a(1-f_b),\\
+\avg{J_x\tilde J_x(t)}_0&=\sum_{ab}|v_{ab}|^2e^{\ii(\varepsilon_a-\varepsilon_b)t}f_b(1-f_a),
+\end{align}
+and since $f_a(1-f_b)-f_b(1-f_a)=f_a-f_b$,
+\begin{equation}
+\avg{[\tilde J_x(t),J_x]}_0=\sum_{ab}|v_{ab}|^2(f_a-f_b)\,e^{\ii(\varepsilon_a-\varepsilon_b)t}.
+\end{equation}
+The retarded correlator $\Pi^R_{xx}(\omega)=-\ii\int_0^\infty\dd t\,e^{\ii(\omega+\ii\eta)t}\avg{[\tilde J_x(t),J_x]}_0$ follows from $\int_0^\infty\dd t\,e^{\ii(x+\ii\eta)t}=\ii/(x+\ii\eta)$:
+\begin{equation}
+\Pi^R_{xx}(\omega)=\sum_{ab}|v_{ab}|^2\,\frac{f_a-f_b}{\omega+\varepsilon_a-\varepsilon_b+\ii\eta}.
+\label{eq:Lehmann}
+\end{equation}
+Eq.~\eqref{eq:Lehmann} is the Lehmann (spectral) representation of the current response; it only involves the exact one-body eigenstates and energies of the sample, and is valid for each impurity configuration separately.
+
+The macroscopic conductivity is the spatial average of Eq.~\eqref{eq:Ksigma}, $\sigma_{xx}(\omega)=\frac1V\int\!\!\int\dd\mathbf r\,\dd\mathbf r'\,\sigma^{xx}$, so that $\sigma_{xx}=\frac{\ii e^2}{\omega V}\,\Pi^R_{xx}+\frac{\ii e^2n}{m\omega}$ with $\Pi^R_{xx}$ built from the total current $J_x$ above. The diamagnetic term is purely imaginary for real $\omega$, so the dissipative part is
+\begin{equation}
+\mathrm{Re}\,\sigma_{xx}(\omega)=-\frac{e^2}{\omega V}\,\mathrm{Im}\,\Pi^R_{xx}(\omega).
+\end{equation}
+Using $\mathrm{Im}\,(x+\ii\eta)^{-1}=-\pi\delta(x)$ in Eq.~\eqref{eq:Lehmann},
+\begin{equation}
+\mathrm{Re}\,\sigma_{xx}(\omega)=\frac{\pi e^2g_s}{V}\sum_{ab}|v_{ab}|^2\,\frac{f_a-f_b}{\omega}\,\delta(\varepsilon_b-\varepsilon_a-\omega),
+\end{equation}
+where $g_s$ is the spin degeneracy and $a,b$ now label orbital states. This is already the Kubo--Greenwood formula at finite frequency: absorption of a photon $\omega$ takes an occupied state $a$ to an empty state $b$ at a rate set by $|v_{ab}|^2$ (Fermi's golden rule).
+
+\paragraph{The dc limit.} The order of limits matters. We take $q\to0$ first (the current operator is the uniform one, as above), then the thermodynamic limit $V\to\infty$, so the spectrum is dense and the delta function is meaningful, and only then $\omega\to0$. In that limit $(f_a-f_b)/\omega\to-f'(\varepsilon_a)$, which at $T=0$ is $\delta(E_F-\varepsilon_a)$, and $\delta(\varepsilon_b-\varepsilon_a)$ together with it puts both states on the Fermi surface:
+\begin{equation}
+\boxed{\sigma_{dc}=\frac{\pi e^2g_s}{V}\sum_{ab}|(v_x)_{ab}|^2\,\delta(E_F-\varepsilon_a)\,\delta(E_F-\varepsilon_b)}
+\label{eq:KG}
+\end{equation}
+This is the Kubo--Greenwood formula~\cite{Greenwood1958}, the dc form of the Kubo result of A.2 for non-interacting electrons. Only the exact eigenstates at $E_F$ and the matrix elements of the velocity between them matter; for a given sample no averaging has been done yet.
