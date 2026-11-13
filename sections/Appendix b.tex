@@ -336,7 +336,6 @@ line on top and the advanced line below, a pairing can join two
 dots of the same line (an \emph{arc}) or one dot of each line
 (a \emph{rung}).
 
-\paragraph{Lowest orders.}
 With $N=2$ dots there are three diagrams
 (Fig.~\ref{fig:lowest}): an arc on the retarded line, an arc on
 the advanced line, or one rung. With $N=4$ and two dots on each
@@ -374,7 +373,7 @@ $\mathbf a-\mathbf k'$ at $l_2$). This fixes $\mathbf a$:
 &\text{crossed } (u_1l_2)(u_2l_1):
 \quad
 (\mathbf p-\mathbf k)+(\mathbf a-\mathbf k')=0
-\ \Rightarrow\ \mathbf a=\mathbf K-\mathbf p,
+\ \Rightarrow\ \mathbf a=\mathbf K-\mathbf p;
 \quad \mathbf K=\mathbf k+\mathbf k'.
 \end{align*}
 (The second pair of each line gives the same $\mathbf a$.)
@@ -382,7 +381,6 @@ So the two lines carry the same momentum between uncrossed
 rungs, and opposite momenta, up to the constant $\mathbf K$,
 between crossed rungs.
 
-\paragraph{Why $\mathbf K\to0$.}
 In the uncrossed diagram the loop sum is over
 $\overline G^R(\mathbf p)\,\overline G^A(\mathbf p)$: the two
 propagators have the same energy $\xi_{\mathbf p}$ for every
@@ -390,7 +388,7 @@ $\mathbf p$, so their poles always face each other and the sum
 is pinched (B.3). In the crossed diagram the sum is over
 $\overline G^R(\mathbf p)\,\overline G^A(\mathbf K-\mathbf p)$,
 and the two energies differ. For small $\mathbf K$, using
-$\epsilon_{-\mathbf p}=\epsilon_{\mathbf p}$,
+$\epsilon_{-\mathbf p}=\epsilon_{\mathbf p}$ and expanding we get,
 \[
 \xi_{\mathbf K-\mathbf p}
 =\xi_{\mathbf p-\mathbf K}
@@ -541,9 +539,7 @@ two vertices.}
 \label{fig:classes}
 \end{figure}
 
-\paragraph{Arbitrary order.}
-For $N$ dots every pairing is a set of arcs and rungs. An isolated
-Born self-energy insertion, containing no nested impurity lines
+For arbitrary $N$ dots every pairing is a set of arcs and rungs. An isolated Born self-energy insertion, containing no nested impurity lines
 or rung crossings, is already included in the thick (Born-dressed)
 propagator $\overline G$. More complicated nested or crossed
 self-energy structures are neglected in the Born approximation.
@@ -556,8 +552,8 @@ $\{1,\dots,n\}$, and there are $n!$ of them. Two of them stand
 out (Table~\ref{tab:classes}): $\pi=$ identity, in which no rungs
 cross (the ladder), and $\pi=$ reversal, in which every rung
 crosses every other (the maximally crossed diagram, whose sum
-is the Cooperon of weak localization
-\cite[Sec.~15.4]{BruusFlensberg}).
+is the Cooperon of weak localization as shown in the main text)
+\cite{BruusFlensberg}.
 
 \begin{table}[ht]
 \centering
@@ -576,7 +572,7 @@ Class & Pairing structure & Name\\
 \label{tab:classes}
 \end{table}
 
-\paragraph{Which arrangements matter.}
+\paragraph{Which arrangements matter ?}
 We need a rule for the size of a diagram. Each rung brings a
 weight $W_0=1/(2\pi\nu\tau)$ (B.3) and a free momentum sum.
 If that sum runs over a pinched retarded--advanced pair carrying
@@ -591,7 +587,7 @@ the same momentum $\mathbf p$, as in the ladder, it gives
 \]
 and the rung costs $W_0\cdot2\pi\nu\tau=1$: it is of order one
 however many rungs there are, so a ladder cannot be truncated
-and must be summed. In the crossed diagram the pair carries
+and all must be summed. In the crossed diagram the pair carries
 opposite momenta $\mathbf p$ and $\mathbf K-\mathbf p$, and
 for $\mathbf K\to0$ inversion symmetry
 $\epsilon_{-\mathbf p}=\epsilon_{\mathbf p}$ turns the sum into
@@ -673,25 +669,6 @@ enumeration to illustrate the selection; we do not claim a
 general proof for arbitrary $n$. Arcs that cross a rung
 (Fig.~\ref{fig:straddle}) fail the criterion in the same way.
 
-The same vertex factor
-$\sum_{\mathbf k}v_{\mathbf kx}
-\overline G^R_{\mathbf k}\overline G^A_{\mathbf k}$
-also makes every $S^{(n)}_{\mathrm{ladder}}$ with $n\ge1$
-vanish for isotropic white noise at $\mathbf q=0$, $\omega=0$,
-since in the ladder the first and last pairs touch the vertices.
-We still keep the ladder as a family: it is where the vertex
-corrections of anisotropic disorder and the diffusion pole at
-finite $\mathbf q,\omega$ come from (Appendix~C).
-
-\paragraph{The approximation made.}
-We retain the dressed bubble, the ladder and the maximally
-crossed series, the families in which every loop keeps the
-retarded--advanced enhancement. Arrangements that keep the
-enhancement can still vanish by symmetry, as the mixed $n=3$
-ones do for white noise. The pairings that lose a pinched sum
-are suppressed: the factor $1/k_{\mathrm F}\ell$ above is an
-estimate of their typical size, the actual suppression depends
-on the diagram, and it is not calculated here.
 
 % ===== Figure: the six arrangements of three rungs =====
 \providecommand{\permdiag}[3]{
@@ -865,7 +842,6 @@ $\mathbf K=\mathbf k+\mathbf k'$ the same at every rung; this
 family, $S^{(n)}_{\mathrm{cross}}$ with $n\ge2$, is written out
 in the main text.
 
-\paragraph{The sum.}
 The averaged retarded--advanced trace is therefore the sum of
 the leading families (Fig.~\ref{fig:sum}),
 \[
@@ -894,20 +870,10 @@ S^{(0)}
 +\sum_{n\ge1}S^{(n)}_{\mathrm{ladder}}
 +\sum_{n\ge2}S^{(n)}_{\mathrm{cross}}
 \right]\\
-&=\sigma_D+\delta\sigma_{\mathrm{WL}}.
+&=\frac{e^2g_s}{2\pi V}S.
 \end{aligned}
 \]
-Class~1 is the bubble of independently dressed lines, the
-Drude-type term; class~2 adds the vertex corrections of the
-ladder; together they give the Drude conductivity
-$\sigma_D$ for the isotropic white-noise model used here, where
-the ladder correction to the uniform current vertex vanishes
-(Appendix~C); this is not a universal statement for arbitrary
-disorder. Class~3 is the interference of an electron path with
-its time-reversed partner and gives the correction
-$\delta\sigma_{\mathrm{WL}}$ (main text). The terms of the
-same-side type, RR and AA, are left out here (Appendix~C).
-
+where $S$ is the contribution from all the following diagrams.
 % ===== Figure: the sum of diagrams in the retarded-advanced bubble ==
 \begin{figure}[ht]
 \centering
@@ -974,9 +940,6 @@ same-side type, RR and AA, are left out here (Appendix~C).
 (thick lines are dressed propagators). Top row: the dressed
 bubble (class~1) and the ladder with one, two, \dots{}
 uncrossed rungs (class~2). Bottom row: the maximally crossed
-diagrams with two, three, \dots{} rungs (class~3). Arcs that do
-not cross a rung are already inside the thick lines
-(Sec.~B.4). The other rung patterns are discussed in
-Sec.~B.4 and Fig.~\ref{fig:perm}.}
+diagrams with two, three, \dots{} rungs (class~3).}
 \label{fig:sum}
 \end{figure}
