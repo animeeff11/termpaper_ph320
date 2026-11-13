@@ -1,0 +1,267 @@
+\section*{Weak localization Correction
+}
+Consider just one fixed impurity configuration, let the exact one-electron states obey $h_U|a\rangle=\epsilon_a|a\rangle$, and let $v_{ab}$ be the matrix elements of the velocity $p_x/m$. Evaluating the commutator for non-interacting electrons gives
+\begin{equation}
+    \Pi^{R}_{xx}(\omega)
+    = \frac{1}{V}\sum_{a,b,s}\frac{(f_a-f_b)\,|v_{ab}|^2}{\omega+\epsilon_a-\epsilon_b+\mathrm{i}0^+}.
+\end{equation}
+Taking the imaginary part, using $f_a-f_b\to-\omega f'(\epsilon_a)$ for $\omega\to0$, and setting $T=0$ ($-f'=\delta(E_{\mathrm F}-\epsilon)$) gives the Kubo--Greenwood formula \cite{Kubo1957,Greenwood1958}
+\begin{equation}
+    \sigma_{xx}^{\mathrm{dc}}
+    = \frac{\pi e^2 g_s}{V}\sum_{a,b}|v_{ab}|^2\,
+      \delta(E_{\mathrm F}-\epsilon_a)\,\delta(E_{\mathrm F}-\epsilon_b),
+\end{equation}
+where $g_s$ is the spin degeneracy and $V$ the sample volume. Now we introduce the retarded and advanced Green functions  $G^{R/A}(E)=(E-h_U\pm\mathrm{i}0^+)^{-1}$. They satisfy $\delta(E-h_U)=\frac{\mathrm{i}}{2\pi}\,[G^R(E)-G^A(E)]$, which turns the double sum into a trace:
+\begin{align}
+    \sigma_{xx}^{\mathrm{dc}}
+    &= -\frac{e^2 g_s}{4\pi V}\operatorname{Tr}\!\big[v_x(G^R-G^A)\,v_x(G^R-G^A)\big]_{E_{\mathrm F}} \nonumber\\
+    &= \frac{e^2 g_s}{4\pi V}\Big\{2\operatorname{Tr}[v_xG^Rv_xG^A]
+       -\operatorname{Tr}[v_xG^Rv_xG^R]
+       -\operatorname{Tr}[v_xG^Av_xG^A]\Big\}.
+    \label{eq:sigma_trace}
+\end{align}
+
+The disorder-averaged conductivity is obtained by averaging Eq.~\eqref{eq:sigma_trace} over impurity configurations, after forming the products of Green functions. In the weak-disorder, the leading contribution to the dc conductivity arises from the retarded--advanced (RA) product only. This can be understood from the analytic structure of the Green functions. The poles of $G^R$ and $G^A$ lie on opposite sides of the real energy axis, giving rise to a singular contribution when their poles approach the real axis from opposite directions. This is commonly referred to as the retarded--advanced pole pinch (defined precisely in Appendix~B, Sec.~B.3). In contrast, the poles of two retarded or two advanced Green functions lie on the same side of the real axis, allowing the corresponding energy integral to be evaluated by closing the contour in the opposite half-plane, where no poles are enclosed. Consequently, the RR and AA terms do not produce the same singularity, and hence we retain only the RA contribution in calculating the leading weak-localization correction \cite{Coleman2015},
+\begin{equation}
+    \overline{\sigma_{xx}^{\mathrm{dc}}}
+    \simeq
+    \frac{e^2 g_s}{2\pi V}\,
+    \overline{\operatorname{Tr}\!\left[v_x G^R v_x G^A\right]}.
+    \label{eq:sigma_RA}
+\end{equation}
+
+Now let us define the impurity potential whose average we need. The one-electron Hamiltonian of a fixed sample is $~h_U=p^2/2m+U(\mathbf r)$, where $U(\mathbf r)$ is a static scalar potential produced by randomly placed impurities. We take it to be statistically homogeneous, with zero mean (a non-zero mean only shifts the energy), and Gaussian. It is therefore fully specified by its pair correlator, which we take to be white noise:
+\[
+\overline{U(\mathbf r)}=0,\qquad
+\overline{U(\mathbf r)\,U(\mathbf r')}=W_0\,\delta(\mathbf r-\mathbf r').
+\]
+For a Gaussian potential, the average of any product containing an odd number of factors of $U$ vanishes. For an even number using Wick's Theorem, it is given by the sum over all possible pairings of the factors, with each pair replaced by the correlator above. Thus, disorder averaging reduces higher moments of the potential to products of pair correlators.
+
+To see how these pairings enter the Green functions, expand the Green function of a single sample in powers of $U$. Writing $g_0^{R/A}=(E-h_0\pm\mathrm{i}0^+)^{-1}$ for the clean Green functions, with $h_0=p^2/2m$, the identity $G=g_0+g_0UG$ gives the successive-scattering series
+\[
+G^{R/A}=g_0^{R/A}+g_0^{R/A}Ug_0^{R/A}
++g_0^{R/A}Ug_0^{R/A}Ug_0^{R/A}+\cdots .
+\]
+Here every occurrence of $U$ is the same potential belonging to the fixed sample. In the plane-wave basis, the clean Green function is diagonal,
+\[
+g_0^{R/A}(\mathbf k)
+=\frac{1}{E-\epsilon_{\mathbf k}\pm\mathrm{i}0^+},
+\]
+while a matrix element $U_{\mathbf k\mathbf p}=\langle\mathbf k|U|\mathbf p\rangle$ scatters a particle from momentum $\mathbf p$ to momentum $\mathbf k$. For plane waves normalized in a finite volume $V$, the disorder average of two such matrix elements is given below. The delta function here depicts conservation of total momentum across the pair: the two impurity events transfer equal and opposite momenta,
+\[
+\overline{U_{\mathbf a\mathbf b}\,U_{\mathbf c\mathbf d}}
+=\frac{W_0}{V}\,
+\delta_{\mathbf a-\mathbf b,\;\mathbf d-\mathbf c}.
+\]
+Diagrammatically, a Green-function expansion is represented by solid segments, each carrying a momentum and representing a clean propagator $g_0^{R/A}$, with dots representing factors of the impurity potential $U$. Upon disorder averaging, the Gaussian pairings are represented by dashed lines joining pairs of dots. Each dashed line carries the correlator weight $W_0/V$ together with the momentum-conservation condition above. The same disorder realization appears in all Green functions in a product, so the pairings can also connect impurity insertions on different Green-function lines. To not delve that much into details of the diagrammatic perturbation theory and other classes of diagrams and digress we suggest the reader to go through Appendix B and C for details of the outline we serve from the next section. 
+\tikzset{
+  thickline/.style={very thick,->},
+  thickadv/.style={very thick,<-},
+  imp/.style={dashed,thick},
+  dot/.style={circle,fill,inner sep=1.6pt},
+  vert/.style={rectangle,fill,inner sep=2.2pt},
+  lab/.style={font=\small},
+  coop/.style={draw,fill=gray!35,minimum width=1.3cm,minimum height=1.9cm,inner sep=0}
+}\\
+
+Considering the leading order diagrams and averaging over the Gaussian pairings dresses each propagator with the arcs on its own line (Born approximation), so that
+$\overline G^{R/A}(\mathbf k)=1/(E-\epsilon_{\mathbf k}\pm\mathrm{i}\gamma)$
+with $\gamma=1/2\tau$ and $1/\tau=2\pi W_0\nu$, where $\nu$ is the density of states per spin and per volume (Appendix~B, Secs.~B.2--B.3). What remains of $\overline{\operatorname{Tr}[v_xG^Rv_xG^A]}$ are the pairings that join the two lines, and Appendix~B shows that, in the weak-disorder limit $k_{\mathrm F}\ell\gg1$, only three families survive the pole-pinch criterion: the bare bubble (class~1), the ladder of uncrossed rungs (class~2) and the maximally crossed series (class~3),
+\begin{equation}
+    \sigma_{xx}^{\mathrm{dc}}\simeq\frac{e^2g_s}{2\pi V}\Big[S^{(0)}+\sum_{n\ge1}S^{(n)}_{\mathrm{ladder}}+\sum_{n\ge2}S^{(n)}_{\mathrm{cross}}\Big]=\frac{e^2g_s}{2\pi V}S
+    \label{eq:wl_three}
+\end{equation}
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.52]
+ \tikzset{tl/.style={very thick,->},ta/.style={very thick,<-}}
+ \newcommand{\frm}{
+   \draw[tl] (0,0)--(4.6,0);
+   \draw[ta] (0,-1.4)--(4.6,-1.4);
+   \draw[gray] (0,0)--(0,-1.4);
+   \draw[gray] (4.6,0)--(4.6,-1.4);
+   \node[vert] at (0,-0.7) {};
+   \node[vert] at (4.6,-0.7) {};
+ }
+ \node at (-1.9,-0.7) {$S=$};
+ % ---- row 1
+ \begin{scope}
+  \frm
+  \node[lab] at (2.3,-2.4) {dressed bubble};
+  \node at (5.6,-0.7) {$+$};
+ \end{scope}
+ \begin{scope}[xshift=6.6cm]
+  \frm
+  \node[dot] at (2.3,0) {};
+  \node[dot] at (2.3,-1.4) {};
+  \draw[imp] (2.3,0)--(2.3,-1.4);
+  \node[lab] at (2.3,-2.4) {one rung};
+  \node at (5.6,-0.7) {$+$};
+ \end{scope}
+ \begin{scope}[xshift=13.2cm]
+  \frm
+  \foreach \x in {1.5,3.1}{
+   \node[dot] at (\x,0) {};
+   \node[dot] at (\x,-1.4) {};
+   \draw[imp] (\x,0)--(\x,-1.4);
+  }
+  \node[lab] at (2.3,-2.4) {two rungs};
+  \node at (5.6,-0.7) {$+\cdots$};
+ \end{scope}
+ % ---- row 2
+ \begin{scope}[yshift=-4.2cm]
+  \frm
+  \node[dot] at (1.5,0) {};
+  \node[dot] at (3.1,0) {};
+  \node[dot] at (1.5,-1.4) {};
+  \node[dot] at (3.1,-1.4) {};
+  \draw[imp] (1.5,0)--(3.1,-1.4);
+  \draw[imp] (3.1,0)--(1.5,-1.4);
+  \node[lab] at (2.3,-2.4) {two crossed rungs};
+  \node at (5.6,-0.7) {$+$};
+ \end{scope}
+ \begin{scope}[xshift=6.6cm,yshift=-4.2cm]
+  \frm
+  \foreach \x in {1.1,2.3,3.5}{
+   \node[dot] at (\x,0) {};
+   \node[dot] at (\x,-1.4) {};
+  }
+  \draw[imp] (1.1,0)--(3.5,-1.4);
+  \draw[imp] (2.3,0)--(2.3,-1.4);
+  \draw[imp] (3.5,0)--(1.1,-1.4);
+  \node[lab] at (2.3,-2.4) {three crossed rungs};
+  \node at (5.6,-0.7) {$+\cdots$};
+ \end{scope}
+\end{tikzpicture}
+\end{figure}
+\\
+If we evaluate the first two classes: bare and ladder ones. The bare diagram gives the Drude conductivity $\sigma_D=ne^2\tau/m$, and the ladder, which can only change $\tau$ into the transport time $\tau_{\mathrm{tr}}$, adds nothing for white-noise disorder (see Appendix C). The leading quantum correction to the conductivity is therefore the next order term which is class-3 or maximally crossed diagrams, which we now sum in the next section.
+
+\subsubsection*{The maximally crossed series and the Cooperon}
+
+So now considering the next order diagrams as Langer-Neal\cite{LangerNeal1966,Bergmann1984} did taking the maximally crossed terms and evaluating class-3 diagram with $n$ rungs the $j$-th retarded propagator is joined to the advanced one carrying the opposite momentum, as derived in Appendix~B. The retarded line carries momenta $\mathbf p_0=\mathbf k,\mathbf p_1,\dots,\mathbf p_n=\mathbf k'$ and the advanced line carries $\mathbf K-\mathbf p_j$ with $\mathbf K=\mathbf k+\mathbf k'$ the same at every rung, so (Fig.~\ref{fig:wl_series})
+\begin{equation}
+    S^{(n)}_{\mathrm{cross}}=\Big(\frac{W_0}{V}\Big)^{n}\sum_{\mathbf p_0,\dots,\mathbf p_n}
+    v_x(\mathbf p_0)\,v_x(\mathbf p_n)\prod_{j=0}^{n}\overline G^R(\mathbf p_j)\,\overline G^A(\mathbf K-\mathbf p_j).
+    \label{eq:wl_Scross}
+\end{equation}
+
+% ===== Figure: crossed series and the Cooperon ===========================
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.5]
+ % two crossed rungs
+ \begin{scope}
+  \draw[thickline] (0,0)--(4.8,0);\draw[thickadv] (0,-1.4)--(4.8,-1.4);
+  \draw[gray] (0,0)--(0,-1.4);\draw[gray] (4.8,0)--(4.8,-1.4);
+  \node[vert] at (0,-0.7) {};\node[vert] at (4.8,-0.7) {};
+  \node[dot] at (1.7,0) {};\node[dot] at (3.1,0) {};
+  \node[dot] at (1.7,-1.4) {};\node[dot] at (3.1,-1.4) {};
+  \draw[imp] (1.7,0)--(3.1,-1.4);\draw[imp] (3.1,0)--(1.7,-1.4);
+  \node at (5.9,-0.7) {$+$};
+ \end{scope}
+ % three crossed rungs
+ \begin{scope}[xshift=7.0cm]
+  \draw[thickline] (0,0)--(6.0,0);\draw[thickadv] (0,-1.4)--(6.0,-1.4);
+  \draw[gray] (0,0)--(0,-1.4);\draw[gray] (6.0,0)--(6.0,-1.4);
+  \node[vert] at (0,-0.7) {};\node[vert] at (6.0,-0.7) {};
+  \foreach \x in {1.5,3.0,4.5}{\node[dot] at (\x,0) {};\node[dot] at (\x,-1.4) {};}
+  \draw[imp] (1.5,0)--(4.5,-1.4);\draw[imp] (3.0,0)--(3.0,-1.4);\draw[imp] (4.5,0)--(1.5,-1.4);
+  \node at (7.9,-0.7) {$+\ \cdots$};
+  \node at (10.4,-0.7) {$=$};
+ \end{scope}
+ % bubble with the Cooperon
+ \begin{scope}[xshift=18.6cm]
+  \draw[thickline] (0,0)--(7.0,0);\draw[thickadv] (0,-1.4)--(7.0,-1.4);
+  \draw[gray] (0,0)--(0,-1.4);\draw[gray] (7.0,0)--(7.0,-1.4);
+  \node[vert] at (0,-0.7) {};\node[vert] at (7.0,-0.7) {};
+  \node[coop] at (3.5,-0.7) {$C$};
+  \node[lab,above] at (1.4,0.05) {$\mathbf k$};
+  \node[lab,above] at (5.6,0.05) {$\mathbf k'$};
+ \end{scope}
+\end{tikzpicture}
+\caption{The maximally crossed series: the $j$-th rung joins the $j$-th dot of the upper line to the $(n+1-j)$-th dot of the lower one. Summed, it is a bubble with the Cooperon $C(\mathbf K)$ inserted between the outer pairs, $\mathbf K=\mathbf k+\mathbf k'$.}
+\label{fig:wl_series}
+\end{figure}
+
+The sum is done in the same three steps that sum the diffuson in Appendix~C. The $n-1$ inner pairs, with $\mathbf p_1,\dots,\mathbf p_{n-1}$, are identical, and each carries a weight $W_0/V$ and the loop sum
+\[
+\Lambda_{\mathbf K}=\frac1V\sum_{\mathbf p}\overline G^R(\mathbf p)\,\overline G^A(\mathbf K-\mathbf p).
+\]
+The two outer pairs, $\overline G^R(\mathbf k)\overline G^A(\mathbf k')$ and $\overline G^R(\mathbf k')\overline G^A(\mathbf k)$, regroup into $\overline G^R(\mathbf k)\overline G^A(\mathbf k)$ and $\overline G^R(\mathbf k')\overline G^A(\mathbf k')$ and do not depend on $n$, so Eq.~\eqref{eq:wl_Scross} becomes
+\[
+S^{(n)}_{\mathrm{cross}}=\frac1V\sum_{\mathbf k,\mathbf k'}v_x(\mathbf k)\,v_x(\mathbf k')\,
+\overline G^R(\mathbf k)\overline G^A(\mathbf k)\,\overline G^R(\mathbf k')\overline G^A(\mathbf k')\;
+W_0\,(W_0\Lambda_{\mathbf K})^{n-1}.
+\]
+The $n$-dependence is a geometric series in $W_0\Lambda_{\mathbf K}$, so
+\begin{equation}
+    \sum_{n\ge2}S^{(n)}_{\mathrm{cross}}=\frac1V\sum_{\mathbf k,\mathbf k'}v_x(\mathbf k)\,v_x(\mathbf k')\,
+    \overline G^R(\mathbf k)\overline G^A(\mathbf k)\,\overline G^R(\mathbf k')\overline G^A(\mathbf k')\;C(\mathbf K),
+    \qquad C(\mathbf K)=\frac{W_0\,(W_0\Lambda_{\mathbf K})}{1-W_0\Lambda_{\mathbf K}} .
+    \label{eq:wl_Cooperon}
+\end{equation}
+
+\paragraph{The loop sum.}
+For $K\ell\ll1$ we write $\xi_{\mathbf K-\mathbf p}\simeq\xi_{\mathbf p}-\mathbf v\!\cdot\!\mathbf K$, as in Eq.~\eqref{eq:crossint}, and the energy integral is $\int\mathrm{d}\xi\,\overline G^R(\mathbf p)\overline G^A(\mathbf K-\mathbf p)=2\pi\tau/(1+\mathrm{i}\tau\,\mathbf v\!\cdot\!\mathbf K)$. With the rule for momentum sums of Appendix~C and the angular average $\langle(\mathbf v\!\cdot\!\mathbf K)^2\rangle=v_{\mathrm F}^2K^2/d=DK^2/\tau$ (the linear term averages to zero),
+\[
+\Lambda_{\mathbf K}=2\pi\nu\tau\Big\langle\frac{1}{1+\mathrm{i}\tau\,\mathbf v\!\cdot\!\mathbf K}\Big\rangle_{\hat{\mathbf p}}\simeq2\pi\nu\tau\,(1-D\tau K^2).
+\]
+Since $W_0\,2\pi\nu\tau=1$, we get $1-W_0\Lambda_{\mathbf K}=D\tau K^2$ and
+\begin{equation}
+    C(\mathbf K)\simeq\frac{W_0}{D\tau K^2}\qquad(K\ell\ll1).
+    \label{eq:wl_pole}
+\end{equation}
+This is the diffusion pole of Appendix~C at $\omega=0$. It is called the Cooperon because the pair of lines running in opposite directions, $\mathbf p$ and $\mathbf K-\mathbf p$, is a particle--particle ladder (the diffuson of C.3 is a particle--hole ladder). The difference from C.3 is that here the pole momentum $\mathbf K=\mathbf k+\mathbf k'$ is not set by an external probe: it is the sum of the momenta at the two current vertices, and it is summed over.
+
+\paragraph{The outer pairs.}
+The pole confines the sum to $K\lesssim1/\ell$, where $\mathbf k'=\mathbf K-\mathbf k\simeq-\mathbf k$. Then $v_x(\mathbf k')\simeq-v_x(\mathbf k)$, and, because $\xi_{\mathbf k'}\simeq\xi_{\mathbf k}$ to within $v_{\mathrm F}K\lesssim\gamma$, the two outer pairs are the same function, $\overline G^R\overline G^A=1/(\xi^2+\gamma^2)$. The sum over $\mathbf k$ at fixed $\mathbf K$ is then
+\[
+\sum_{\mathbf k}v_x(\mathbf k)\,v_x(\mathbf k')\,\big[\overline G^R\overline G^A\big]_{\mathbf k}\big[\overline G^R\overline G^A\big]_{\mathbf k'}
+\simeq-V\nu\,\frac{v_{\mathrm F}^2}{d}\int\mathrm{d}\xi\,\frac{1}{(\xi^2+\gamma^2)^2}
+=-V\nu\,\frac{v_{\mathrm F}^2}{d}\,\frac{\pi}{2\gamma^3}=-4\pi V\nu D\tau^2 .
+\]
+The minus sign is the whole effect: the current vertices at the two ends are antiparallel because the electron leaves the loop backwards.
+
+\paragraph{The correction.}
+Putting the outer pairs and the pole into Eq.~\eqref{eq:wl_Cooperon},
+\[
+\sum_{n\ge2}S^{(n)}_{\mathrm{cross}}\simeq-\frac1V\sum_{\mathbf K}\frac{W_0}{D\tau K^2}\,4\pi V\nu D\tau^2
+=-4\pi\nu W_0\tau\sum_{\mathbf K}\frac1{K^2}=-2V\int\frac{\mathrm{d}^dK}{(2\pi)^d}\frac1{K^2},
+\]
+where again $2\pi\nu W_0\tau=1$ was used. $W_0$, $\nu$, $D$ and $\tau$ all drop out. With the prefactor $e^2g_s/2\pi V$ of Eq.~\eqref{eq:wl_three} and $g_s=2$ (restoring $\hbar$),
+\begin{equation}
+    \delta\sigma=-\frac{2e^2}{\pi\hbar}\int\frac{\mathrm{d}^dK}{(2\pi)^d}\frac{1}{K^2}.
+    \label{eq:wl_deltasigma}
+\end{equation}
+The integral runs over $K\lesssim1/\ell$ at the upper end, where the diffusion form of $C$ breaks down. At the lower end it is cut off by the sample size, $K\gtrsim1/L$, or by whatever destroys the phase coherence of the time-reversed pair, such as the inelastic length $L_\varphi$.
+
+\paragraph{Interpretation.}
+Using $1/K^2=D\int_0^\infty\mathrm{d}t\,e^{-DK^2t}$ in Eq.~\eqref{eq:wl_deltasigma},
+\[
+\delta\sigma=-\frac{2e^2D}{\pi\hbar}\int_{\tau}^{L^2/D}\mathrm{d}t\,(4\pi Dt)^{-d/2},
+\]
+the classical probability density for a diffusing particle to return to its starting point, integrated over the times for which the motion is coherent. A path and its time-reversed partner acquire the same phase only when they return to the starting point, and there they interfere constructively. They double the probability of backscattering compared with the classical value, and the conductivity is reduced.
+
+\subsection*{Size dependence of the conductance}
+
+The integral in Eq.~\eqref{eq:wl_deltasigma} is cut off at $1/L$ and at $1/\ell$, so
+\[
+\delta\sigma(L)=-\frac{2e^2}{\pi\hbar}\,\frac{S_d}{(2\pi)^d}\int_{1/L}^{1/\ell}\mathrm{d}K\,K^{d-3},
+\]
+with $S_d$ the area of the unit sphere ($S_1=2$, $S_2=2\pi$, $S_3=4\pi$). In the dimensionless conductance $g(L)=\hbar\sigma L^{d-2}/e^2$ of the previous sections this gives
+\begin{equation}
+    \beta(g)=\frac{\mathrm{d}\ln g}{\mathrm{d}\ln L}\simeq(d-2)-\frac{a_d}{g},\qquad a_d=\frac{2}{\pi}\frac{S_d}{(2\pi)^d},
+    \label{eq:wl_beta}
+\end{equation}
+with $a_1=2/\pi^2$, $a_2=1/\pi^2$ and $a_3=1/\pi^3$, valid for $g\gg1$. The first term is the ohmic value of Eq.~\eqref{eq:ohmic_regime}, and the second is the interference correction, which is always negative: coherent backscattering never increases the conductance.
+
+In $d=2$ the integral is logarithmic, and
+\[
+g(L)=g_0-\frac1{\pi^2}\ln\frac{L}{\ell},
+\]
+so $\beta=-1/(\pi^2g)$ is negative for every $g$ for which the expansion holds: the conductance of a larger sample is smaller, with no scale at which the decrease stops. Setting $g\sim1$ gives a length $\xi\sim\ell\,e^{\pi^2g_0}$ at which the perturbation theory stops being valid. Such a length is exponentially large for a good metal, and it is the scale at which, by the exponential regime of Eq.~\eqref{eq:exp_regime}, the states are localized. If $\beta(g)$ is continuous and monotonic, as AALR assume, then in $d=2$ it increases from $-\infty$ at $g\to0$ (where $\beta\simeq\ln g$) and approaches $0$ from below at large $g$, so it never vanishes: there is no fixed point, no metallic phase, and every state is localized for any weak disorder. This is the central result of AALR.
+
+In $d=3$ the integral is dominated by the upper limit $1/\ell$, so the size-dependent part of $\delta\sigma$ is only $+e^2/\pi^3\hbar L$, and $\beta=1-a_3/g$ is positive at large $g$. At small $g$ it is negative, so $\beta$ crosses zero at some $g_c$. This is an unstable fixed point: a sample with $g>g_c$ flows to a metal, and one with $g<g_c$ to an insulator. Its existence follows from continuity, not from Eq.~\eqref{eq:wl_beta}, since $a_3$ places the zero at $g\sim1/\pi^3\ll1$, deep inside the region where the expansion is not valid. The critical exponent is, for the same reason, not predicted by this calculation. In $d=1$ the correction is of order $g$ itself already at the scale $L\sim\ell$, and all states are localized.
+
+The result holds for the case treated here: a time-reversal-symmetric, non-interacting system at zero temperature without spin-orbit scattering. A magnetic field or magnetic impurities break the equality of the two time-reversed paths and cut the Cooperon off at a finite $K$, which removes the logarithm. This is the reason why the scaling function depends on the symmetry, as noted in the scaling-theory section.
