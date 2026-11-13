@@ -368,16 +368,16 @@ The bare charge vertex is $1$. For white-noise disorder the rung is
 momentum independent, so the dressed charge vertex is also independent
 of $\mathbf p$. The Bethe--Salpeter equation therefore reduces to
 \[
-\Gamma_c
+\Gamma_d
 =1+\frac{W_0}{V}\sum_{\mathbf p}
-  \mathcal P_{\mathbf p}\Gamma_c
-=1+W_0\Lambda\,\Gamma_c,
+  \mathcal P_{\mathbf p}\Gamma_d
+=1+W_0\Lambda\,\Gamma_d,
 \qquad
 \Lambda\equiv\frac1V\sum_{\mathbf p}\mathcal P_{\mathbf p}.
 \]
 Solving gives
 \[
-\Gamma_c=\frac{1}{1-W_0\Lambda}
+\Gamma_d=\frac{1}{1-W_0\Lambda}
 =\sum_{m\ge0}(W_0\Lambda)^m.
 \]
 Thus each additional rung--pair unit contributes a factor
@@ -430,7 +430,7 @@ Using $W_0\,2\pi\nu\tau=1$ from Eq.~\eqref{eq:tau}, we obtain
 \]
 and hence
 \begin{equation}
-\Gamma_c(\mathbf q,\omega)
+\Gamma_d(\mathbf q,\omega)
 =\frac{1}{1-W_0\Lambda}
 =\frac{1}{\tau(Dq^2-\mathrm{i}\omega)}.
 \label{eq:diffpole}
@@ -454,7 +454,7 @@ is exactly zero at $\mathbf q=0$ and of first order in $\mathbf q$ at
 small $\mathbf q$. The ladder with current vertices at both ends is
 therefore proportional to
 \[
-\mathcal J^2\,\Gamma_c\;\propto\;\frac{q_x^2}{Dq^2-\mathrm{i}\omega},
+\mathcal J^2\,\Gamma_d\;\propto\;\frac{q_x^2}{Dq^2-\mathrm{i}\omega},
 \]
 so the pole is always accompanied by a factor that vanishes with $q$. For
 $\mathbf q\to0$ at fixed $\omega\neq0$ the denominator stays finite and the expression goes to zero, which is the order of limits shown A.1 for dc conductivity, and
@@ -468,7 +468,7 @@ flow forever, not a property of the dc conductivity.
 
 This pole starts to matter in two situations. The first is when the probe
 itself carries a wave vector, so that $q$ is an external parameter
-and $\Gamma_c$ is probed directly: the density response, the diffusion
+and $\Gamma_d$ is probed directly: the density response, the diffusion
 of a charge packet, the longitudinal conductivity at finite $q$ and
 $\omega$. There the pole appears physically, as the diffusive relaxation of density
 at rate $Dq^2$, with $D$ the diffusion constant of C.1. The second, and for our paper

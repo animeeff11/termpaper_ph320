@@ -21,15 +21,12 @@
 % Numbered citations and bibliography
 \usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
 \addbibresource{references.bib}
-
+\AtEveryBibitem{\clearfield{eprint}\clearfield{url}}
 \title{Scaling Theory of Localization}
 \author{Your Name}
 \date{\today}
-
 \begin{document}
-
 \maketitle
-
 \begin{abstract}
 % We will write the abstract after completing the paper.
 \end{abstract}
