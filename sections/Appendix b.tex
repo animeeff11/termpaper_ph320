@@ -873,9 +873,12 @@ S^{(0)}
 &=\frac{e^2g_s}{2\pi V}S.
 \end{aligned}
 \]
-where $S$ is the contribution from all the following diagrams.
+where $S$ is the contribution from all the diagrams of Fig.~\ref{fig:sum}.
+
+% float pages are top-aligned instead of vertically centred
+\makeatletter\setlength{\@fptop}{0pt}\setlength{\@fpsep}{12pt plus 1fil}\setlength{\@fpbot}{0pt plus 1fil}\makeatother
 % ===== Figure: the sum of diagrams in the retarded-advanced bubble ==
-\begin{figure}[ht]
+\begin{figure}[!t]
 \centering
 \begin{tikzpicture}[scale=0.52]
  \tikzset{tl/.style={very thick,->},ta/.style={very thick,<-}}
