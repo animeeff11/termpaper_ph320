@@ -1,0 +1,495 @@
+% Appendix C. Uses the TikZ styles and the macro \SE defined at the top of Appendix B
+% (ret, adv, thickline, thickadv, imp, dot, vert, lab).
+\tikzset{
+  blob/.style={draw,fill=gray!35,minimum width=0.6cm,minimum height=1.9cm,inner sep=0},
+  cvert/.style={circle,draw,fill=white,inner sep=1.6pt} % charge (density) vertex
+}
+\newcommand{\cframe}[1]{% closed bubble of width #1
+  \draw[thickline] (0,0)--(#1,0); \draw[thickadv] (0,-1.4)--(#1,-1.4);
+  \draw[gray] (0,0)--(0,-1.4); \draw[gray] (#1,0)--(#1,-1.4);
+  \node[vert] at (0,-0.7) {}; \node[vert] at (#1,-0.7) {};}
+\newcommand{\crung}[1]{% one rung at x=#1
+  \node[dot] at (#1,0) {}; \node[dot] at (#1,-1.4) {};
+  \draw[imp] (#1,0)--(#1,-1.4);}
+
+\newpage
+\section*{Appendix C: Evaluation of the dressed bubble and the ladder}
+\label{app:evaluation}
+
+\noindent
+In Appendix~B, we reduced the retarded--advanced part of the conductivity to three families of diagrams. Here we evaluate the first two: the dressed bubble (class~1, Sec.~C.1) and the ladder (class~2, Sec.~C.2). The maximally crossed series (class~3) is evaluated in the main text. We use only what B has set up: the dressed propagators and the pinched integral, Eq.~\eqref{eq:pinch}, and the expressions \eqref{eq:S0} and \eqref{eq:Sladder} for $S^{(0)}$ and $S^{(n)}_{\mathrm{ladder}}$.
+
+We work at $E=E_{\mathrm F}$ with $k_{\mathrm F}\ell\gg1$, so that
+$\gamma=1/2\tau\ll E_{\mathrm F}$. Momentum sums are done by the
+rule
+\[
+\sum_{\mathbf p}F(\xi_{\mathbf p},\hat{\mathbf p})
+\;\to\;
+V\nu\int_{-\infty}^{\infty}\mathrm{d}\xi\;
+\big\langle F(\xi,\hat{\mathbf p})\big\rangle_{\hat{\mathbf p}},
+\]
+where $\langle\cdots\rangle_{\hat{\mathbf p}}$ is the average over
+the directions of $\mathbf p$ (over the solid angle $\Omega_d$),
+the density of states \emph{per spin} $\nu$ and the velocity
+$\mathbf v=v_{\mathrm F}\hat{\mathbf p}$ are evaluated at the Fermi
+surface, and $d$ is the dimension. This neglects the variation of $\nu$ and $v$ over the
+width $\gamma$ of the pinched region, which costs corrections of
+relative order $1/E_{\mathrm F}\tau$. We also write
+$D=v_{\mathrm F}^2\tau/d$; C.1 shows that it is the diffusion constant.
+
+\subsection*{C.1\quad The dressed bubble: the Drude conductivity}
+
+Class~1 is the bubble of B.5,
+$S^{(0)}=\sum_{\mathbf k}v_{\mathbf kx}^2\,
+\overline G^R(\mathbf k)\overline G^A(\mathbf k)$,
+which has no rung and therefore no angular coupling between the two
+lines: the direction of $\mathbf k$ enters only through $v_{\mathbf kx}^2$,
+and the energy only through the pair $\overline G^R\overline G^A$.
+So with the rule above the sum factorises,
+\[
+S^{(0)}
+=V\nu\,\big\langle v_x^2\big\rangle_{\hat{\mathbf p}}
+\int\mathrm{d}\xi\;\overline G^R\overline G^A
+=V\nu\,\frac{v_{\mathrm F}^2}{d}\,\frac{\pi}{\gamma}
+=V\nu\,\frac{v_{\mathrm F}^2}{d}\,2\pi\tau,
+\]
+where we used $\langle\hat p_x^2\rangle=1/d$ (the $d$ components
+of $\hat{\mathbf p}$ are equivalent and $\sum_i\hat p_i^2=1$) and the
+pinched integral $\pi/\gamma=2\pi\tau$, Eq.~\eqref{eq:pinch}. Inserting this in
+the conductivity formula \eqref{eq:sigma},
+\[
+\sigma^{(0)}
+=\frac{e^2g_s}{2\pi V}\,S^{(0)}
+=e^2g_s\,\nu\,\frac{v_{\mathrm F}^2}{d}\,\tau
+=e^2g_s\,\nu\,D .
+\]
+For free electrons $\nu(\epsilon)\propto\epsilon^{d/2-1}$, so the
+density is $n=g_s\int_0^{E_{\mathrm F}}\nu\,\mathrm{d}\epsilon
+=2g_s\nu E_{\mathrm F}/d$, and with
+$v_{\mathrm F}^2=2E_{\mathrm F}/m$ we get
+$g_s\nu v_{\mathrm F}^2/d=n/m$ in every dimension. Hence
+\[
+\sigma^{(0)}=\sigma_D=\frac{ne^2\tau}{m},
+\]
+the Drude conductivity. The form $e^2g_s\nu D$ above is the Einstein
+relation. This is the dc value of the Drude form quoted in A.2, now with the
+scattering time $\tau$ computed from $W_0$.
+
+% ===== Figure C1: the bubble =========================================
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.85]
+ \cframe{4.4}
+ \node[lab,left] at (-0.15,-0.7) {$v_x$};
+ \node[lab,right] at (4.55,-0.7) {$v_x$};
+ \node[lab,above] at (2.2,0.05) {$\overline G^R(\mathbf k)$};
+ \node[lab,below] at (2.2,-1.45) {$\overline G^A(\mathbf k)$};
+ \node at (5.7,-0.7) {$=$};
+ \node[anchor=west] at (6.1,-0.7)
+   {$V\nu\,\langle v_x^2\rangle_{\hat{\mathbf p}}\displaystyle\int\mathrm{d}\xi\;
+   \overline G^R\overline G^A=V\nu\,\dfrac{v_{\mathrm F}^2}{d}\,2\pi\tau$};
+\end{tikzpicture}
+\caption{Class~1, the dressed bubble, and its evaluation: the sum over
+$\mathbf k$ splits into an average over the direction of $\mathbf k$
+(which gives $\langle v_x^2\rangle=v_{\mathrm F}^2/d$) and the
+pinched energy integral, Eq.~\eqref{eq:pinch}.}
+\label{fig:bubbleeval}
+\end{figure}
+
+
+\subsection*{C.2\quad Class 2: the ladder as a vertex correction}
+
+Class~2 adds uncrossed rungs to the bubble. As in
+Ref.~\cite{Coleman2015}, we sum them by absorbing the rungs into a
+dressed current vertex, which obeys a Bethe--Salpeter equation, and we
+solve that equation on the Fermi surface. The method does not need white noise, so we let the Gaussian pair
+correlator depend on the momentum transfer,
+$\overline{U_{\mathbf a\mathbf b}U_{\mathbf c\mathbf d}}
+=(W(\mathbf a-\mathbf b)/V)\,\delta_{\mathbf a-\mathbf b,\,\mathbf d-\mathbf c}$,
+rotation invariant, so that at the Fermi surface it depends only on the
+angle $\theta$ between the two momenta; white noise is $W=W_0$. The
+Born rate of B.3 becomes $1/\tau=2\pi\nu\langle W\rangle$, where
+$\langle\cdots\rangle$ is the average over $\theta$ on the Fermi
+surface.
+
+We work in the uniform limit of A.1 ($\mathbf q\to0$ first, then
+$\omega\to0$) and write a retarded--advanced pair as
+$\mathcal P_{\mathbf p}=\overline G^R(\mathbf p,E_{\mathrm F}+\omega)\,
+\overline G^A(\mathbf p,E_{\mathrm F})$. Between two rungs the two lines carry
+the same momentum (B.4), so a ladder with $n$ rungs has $n+1$ pairs,
+and the first terms are (Fig.~\ref{fig:ladderterms})
+\[
+\begin{aligned}
+S^{(0)}&=\sum_{\mathbf p}v_x(\mathbf p)\,\mathcal P_{\mathbf p}\,v_x(\mathbf p),\\
+S^{(1)}&=\frac1V\sum_{\mathbf p,\mathbf p'}
+v_x(\mathbf p)\,\mathcal P_{\mathbf p}\,W(\mathbf p-\mathbf p')\,
+\mathcal P_{\mathbf p'}\,v_x(\mathbf p'),\\
+S^{(2)}&=\frac1{V^2}\sum_{\mathbf p,\mathbf p',\mathbf p''}
+v_x(\mathbf p)\,\mathcal P_{\mathbf p}\,W(\mathbf p-\mathbf p')\,
+\mathcal P_{\mathbf p'}\,W(\mathbf p'-\mathbf p'')\,
+\mathcal P_{\mathbf p''}\,v_x(\mathbf p''),
+\end{aligned}
+\]
+and $S^{(0)}$ is the bubble of C.1. Each further rung adds a momentum
+sum, a weight $W/V$ and a pair.
+
+% ===== Figure: the first terms =======================================
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.55]
+ \begin{scope}
+  \cframe{3.6}
+  \node[lab,above] at (1.8,0.05) {$\mathbf p$};
+  \node[lab] at (1.8,-2.3) {$S^{(0)}$};
+  \node at (4.6,-0.7) {$+$};
+ \end{scope}
+ \begin{scope}[xshift=5.6cm]
+  \cframe{5.4}\crung{2.7}
+  \node[lab,above] at (1.35,0.05) {$\mathbf p$};
+  \node[lab,above] at (4.05,0.05) {$\mathbf p'$};
+  \node[lab] at (2.7,-2.3) {$S^{(1)}$};
+  \node at (6.4,-0.7) {$+$};
+ \end{scope}
+ \begin{scope}[xshift=13.2cm]
+  \cframe{7.2}\crung{2.4}\crung{4.8}
+  \node[lab,above] at (1.2,0.05) {$\mathbf p$};
+  \node[lab,above] at (3.6,0.05) {$\mathbf p'$};
+  \node[lab,above] at (6.0,0.05) {$\mathbf p''$};
+  \node[lab] at (3.6,-2.3) {$S^{(2)}$};
+  \node at (8.4,-0.7) {$+\ \cdots$};
+ \end{scope}
+\end{tikzpicture}
+\caption{The bubble and the ladders with one and two uncrossed rungs.
+Between rungs both lines carry the same momentum.}
+\label{fig:ladderterms}
+\end{figure}
+
+We collect the bare current vertex and every sequence of rungs next to it
+into $\Gamma_x(\mathbf p)$,
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+ \node at (-0.6,-0.7) {$\Gamma_x=$};
+ \begin{scope}[xshift=1.0cm]
+  \draw[thickline] (0,0)--(2.7,0);
+  \draw[thickadv] (0,-1.4)--(2.7,-1.4);
+  \draw[gray] (2.7,0)--(2.7,-1.4);
+  \node[cvert] at (2.7,-0.7) {};
+  \node at (4.0,-0.7) {$+$};
+ \end{scope}
+ \begin{scope}[xshift=6.2cm]
+  \draw[thickline] (0,0)--(4.6,0);
+  \draw[thickadv] (0,-1.4)--(4.6,-1.4);
+  \crung{1.0}
+  \draw[gray] (4.6,0)--(4.6,-1.4);
+  \node[cvert] at (4.6,-0.7) {};
+  \node at (5.9,-0.7) {$+$};
+ \end{scope}
+ \begin{scope}[xshift=13.2cm]
+  \draw[thickline] (0,0)--(6.6,0);
+  \draw[thickadv] (0,-1.4)--(6.6,-1.4);
+  \crung{1.0}\crung{3.0}
+  \draw[gray] (6.6,0)--(6.6,-1.4);
+  \node[cvert] at (6.6,-0.7) {};
+  \node at (8.0,-0.7) {$+\ \cdots$};
+ \end{scope}
+\end{tikzpicture}
+\end{center}
+\[
+\Gamma_x(\mathbf p)=v_x(\mathbf p)
++\frac1V\sum_{\mathbf p'}W(\mathbf p-\mathbf p')\,\mathcal P_{\mathbf p'}\,v_x(\mathbf p')
++\frac1{V^2}\sum_{\mathbf p',\mathbf p''}W(\mathbf p-\mathbf p')\,\mathcal P_{\mathbf p'}\,
+W(\mathbf p'-\mathbf p'')\,\mathcal P_{\mathbf p''}\,v_x(\mathbf p'')+\cdots .
+\]
+Factoring the first rung out of every term after the bare vertex leaves
+the same series again, so
+\begin{equation}
+\Gamma_x(\mathbf p)=v_x(\mathbf p)
++\frac1V\sum_{\mathbf p'}W(\mathbf p-\mathbf p')\,\mathcal P_{\mathbf p'}\,\Gamma_x(\mathbf p'),
+\label{eq:vertex}
+\end{equation}
+the Bethe--Salpeter equation of the ladder (Fig.~\ref{fig:vertexeq}).
+Closing the dressed vertex with the left bare vertex and the first pair
+(Fig.~\ref{fig:vertexclosed}) gives the bubble plus all the ladders,
+\[
+S^{(0)}+\sum_{n\ge1}S^{(n)}_{\mathrm{ladder}}
+=\sum_{\mathbf p}v_x(\mathbf p)\,\mathcal P_{\mathbf p}\,\Gamma_x(\mathbf p),
+\]
+so the class-2 contribution is
+$\sum_{\mathbf p}v_x\mathcal P_{\mathbf p}\,[\Gamma_x-v_x]$.
+
+% ===== Figure: the vertex equation ====================================
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.75]
+ \begin{scope}
+  \draw[thickline] (0,0)--(3.1,0);
+  \draw[thickadv] (0,-1.4)--(3.1,-1.4);
+  \node[blob] at (3.4,-0.7) {$\Gamma_x$};
+  \node[lab,above] at (1.5,0.05) {$\mathbf p$};
+  \node at (4.5,-0.7) {$=$};
+ \end{scope}
+ \begin{scope}[xshift=5.3cm]
+  \draw[thickline] (0,0)--(3.1,0);
+  \draw[thickadv] (0,-1.4)--(3.1,-1.4);
+  \draw[gray] (3.1,0)--(3.1,-1.4);
+  \node[vert] at (3.1,-0.7) {};
+  \node[lab,right] at (3.25,-0.7) {$v_x$};
+  \node[lab,above] at (1.5,0.05) {$\mathbf p$};
+  \node at (4.7,-0.7) {$+$};
+ \end{scope}
+ \begin{scope}[xshift=11.0cm]
+  \draw[thickline] (0,0)--(6.1,0);
+  \draw[thickadv] (0,-1.4)--(6.1,-1.4);
+  \crung{1.0}
+  \node[lab,above] at (0.45,0.05) {$\mathbf p$};
+  \node[lab,above] at (3.3,0.05) {$\mathbf p'$};
+  \node[lab,below] at (3.3,-1.45) {$\mathcal P_{\mathbf p'}$};
+  \node[lab,left] at (0.9,-0.7) {$\dfrac{W}{V}$};
+  \node[blob] at (6.4,-0.7) {$\Gamma_x$};
+ \end{scope}
+\end{tikzpicture}
+\caption{The Bethe--Salpeter equation for the dressed current vertex
+(shaded): the bare vertex, plus one rung, a pair at the new momentum
+$\mathbf p'$, and again the dressed vertex.}
+\label{fig:vertexeq}
+\end{figure}
+
+% ===== Figure: closing ===============================================
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.8]
+ \draw[thickline] (0,0)--(6.1,0);
+ \draw[thickadv] (0,-1.4)--(6.1,-1.4);
+ \draw[gray] (0,0)--(0,-1.4);
+ \node[vert] at (0,-0.7) {};
+ \node[lab,left] at (-0.15,-0.7) {$v_x$};
+ \node[blob] at (6.4,-0.7) {$\Gamma_x$};
+ \node[lab,above] at (3.0,0.05) {$\mathcal P_{\mathbf p}$};
+\end{tikzpicture}
+\caption{The bubble together with all its ladders:
+$\sum_{\mathbf p}v_x\,\mathcal P_{\mathbf p}\,\Gamma_x(\mathbf p)$.}
+\label{fig:vertexclosed}
+\end{figure}
+
+
+The pair is peaked at the Fermi surface. With $\mathbf q=0$ and
+$\omega\tau\ll1$ its energy integral is the pinched value
+$\int\mathrm{d}\xi\,\mathcal P=2\pi\tau/(1-\mathrm{i}\omega\tau)\simeq2\pi\tau$,
+Eq.~\eqref{eq:pinch}. Writing $\frac1V\sum_{\mathbf p'}\to\nu\int\mathrm{d}\xi'\langle\cdots\rangle_{\hat{\mathbf p}'}$
+and neglecting the energy dependence of $W$ and $v$, the vertex depends
+only on the direction of $\mathbf p$ and
+\[
+\Gamma_x(\hat{\mathbf p})
+=v_{\mathrm F}\hat p_x
++2\pi\nu\tau\,\big\langle W(\hat{\mathbf p}\!\cdot\!\hat{\mathbf p}')\,
+\Gamma_x(\hat{\mathbf p}')\big\rangle_{\hat{\mathbf p}'} .
+\]
+
+The kernel $W(\hat{\mathbf p}\!\cdot\!\hat{\mathbf p}')$ is rotation
+invariant, so a harmonic of degree $l$ is an eigenfunction (Funk--Hecke
+theorem): $\langle W(\hat{\mathbf p}\!\cdot\!\hat{\mathbf p}')\,Y_l(\hat{\mathbf p}')\rangle
+=w_l\,Y_l(\hat{\mathbf p})$ with $w_l=\langle W\,P_l(\cos\theta)\rangle$,
+$P_1=\cos\theta$. The bare vertex $v_{\mathrm F}\hat p_x$ is a harmonic
+with $l=1$, so $\Gamma_x=\lambda\,v_{\mathrm F}\hat p_x$ with
+\[
+\lambda=1+2\pi\nu\tau\,\langle W\cos\theta\rangle\,\lambda .
+\]
+Using $2\pi\nu\tau=1/\langle W\rangle$,
+\begin{equation}
+\lambda=\frac{1}{1-\langle W\cos\theta\rangle/\langle W\rangle}
+=\frac{\langle W\rangle}{\langle W\,(1-\cos\theta)\rangle}
+=\frac{\tau_{\mathrm{tr}}}{\tau},
+\qquad
+\frac1{\tau_{\mathrm{tr}}}=2\pi\nu\,\langle W\,(1-\cos\theta)\rangle .
+\label{eq:lambda}
+\end{equation}
+
+
+Since $\Gamma_x=\lambda v_x$, the closed diagram of
+Fig.~\ref{fig:vertexclosed} is $\lambda S^{(0)}$, the class-2 part is
+$(\lambda-1)S^{(0)}$, and
+\begin{equation}
+\sigma=\lambda\,\sigma_D=\frac{ne^2\tau_{\mathrm{tr}}}{m}.
+\label{eq:sigmatr}
+\end{equation}
+The ladder therefore replaces the scattering time by the transport
+time: forward scattering ($\cos\theta\approx1$) relaxes the density but
+not the current. These are the standard steps and result.
+
+\paragraph{White noise.}
+For $W=W_0$ we have $\langle W_0\cos\theta\rangle=0$, so $\lambda=1$,
+$\tau_{\mathrm{tr}}=\tau$, and the class-2 contribution is zero: the
+ladder adds nothing to $\sigma_D$ for isotropic white-noise disorder. We
+see it term by term as well. The first rung produces
+$\mathcal J\equiv\sum_{\mathbf p}v_x\mathcal P_{\mathbf p}=V\nu\,2\pi\tau\,\langle v_x\rangle=0$
+at each end, because the pair does not depend on the direction of
+$\mathbf p$ while $v_x$ is odd (Fig.~\ref{fig:onerung}); the longer
+ladders contain the same factors. This is the result used in B.5 for the
+white-noise model.
+
+% ===== Figure: white noise =========================================
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.85]
+ \cframe{5.4}\crung{2.7}
+ \draw[gray] (0.1,-1.95)--(0.1,-2.1)--(2.6,-2.1)--(2.6,-1.95);
+ \draw[gray] (2.8,-1.95)--(2.8,-2.1)--(5.3,-2.1)--(5.3,-1.95);
+ \node[lab] at (1.35,-2.55) {$\mathcal J=0$};
+ \node[lab] at (4.05,-2.55) {$\mathcal J=0$};
+\end{tikzpicture}
+\caption{White noise: in the one-rung ladder each pair touches a current
+vertex and gives $\mathcal J=\sum_{\mathbf p}v_x\mathcal P_{\mathbf p}=0$.}
+\label{fig:onerung}
+\end{figure}
+
+Throughout we took $\mathbf q\to0$ first, at finite $\omega$. The
+vanishing for white noise holds in this order; the opposite order
+behaves differently, because the ladder sum has a pole at
+$\mathbf q=\omega=0$ (next section).
+\subsection*{C.3\quad The ladder as a diffuson}
+
+The same ladder also dresses a vertex that carries no velocity: the
+charge vertex associated with the density. Its sum is the diffuson.
+This provides a useful completion of the class-2 calculation: it
+shows how the ladder behaves at finite wave vector and frequency, and
+why its diffusion pole does not produce a correction to the uniform
+dc conductivity. We take white-noise disorder and retain the external
+wave vector and frequency in the retarded--advanced pair,
+\[
+\mathcal P_{\mathbf p}(\mathbf q,\omega)
+=\overline G^R(\mathbf p+\mathbf q,E_{\mathrm F}+\omega)\,
+ \overline G^A(\mathbf p,E_{\mathrm F}),
+\]
+where the offset $\mathbf q$ is carried unchanged through each rung,
+since the rung transfers equal and opposite momenta to the two
+propagator lines (Eq.~\eqref{eq:pairrule}).
+
+The bare charge vertex is $1$. For white-noise disorder the rung is
+momentum independent, so the dressed charge vertex is also independent
+of $\mathbf p$. The Bethe--Salpeter equation therefore reduces to
+\[
+\Gamma_c
+=1+\frac{W_0}{V}\sum_{\mathbf p}
+  \mathcal P_{\mathbf p}\Gamma_c
+=1+W_0\Lambda\,\Gamma_c,
+\qquad
+\Lambda\equiv\frac1V\sum_{\mathbf p}\mathcal P_{\mathbf p}.
+\]
+Solving gives
+\[
+\Gamma_c=\frac{1}{1-W_0\Lambda}
+=\sum_{m\ge0}(W_0\Lambda)^m.
+\]
+Thus each additional rung--pair unit contributes a factor
+$W_0\Lambda$ to the geometric series.
+
+
+For $q\ell\ll1$, we expand
+$\xi_{\mathbf p+\mathbf q}\simeq
+\xi_{\mathbf p}+\mathbf v\cdot\mathbf q$. Writing
+$\xi=\xi_{\mathbf p}$, the pair becomes
+\[
+\mathcal P_{\mathbf p}
+=\frac{1}{
+(\omega-\mathbf v\cdot\mathbf q-\xi+\mathrm{i}\gamma)
+(-\xi-\mathrm{i}\gamma)}.
+\]
+The poles in $\xi$ lie at
+$\omega-\mathbf v\cdot\mathbf q+\mathrm{i}\gamma$
+and $-\mathrm{i}\gamma$. Closing the contour in the upper half-plane,
+as in Eq.~\eqref{eq:pinch}, gives
+\[
+\int\mathrm{d}\xi\,\mathcal P_{\mathbf p}
+=\frac{2\pi\mathrm{i}}
+{\omega-\mathbf v\cdot\mathbf q+2\mathrm{i}\gamma}
+=\frac{2\pi\tau}
+{1-\mathrm{i}\omega\tau+
+ \mathrm{i}\tau\,\mathbf v\cdot\mathbf q}.
+\]
+Using the momentum-sum rule and expanding for
+$|\omega|\tau\ll1$ and $q\ell\ll1$, the angular average gives
+\[
+\Lambda
+=2\pi\nu\tau
+\left\langle
+\frac{1}{1-\mathrm{i}\omega\tau+
+\mathrm{i}\tau\,\mathbf v\cdot\mathbf q}
+\right\rangle_{\hat{\mathbf p}}
+\simeq
+2\pi\nu\tau
+\left[1+\mathrm{i}\omega\tau-D\tau q^2\right].
+\]
+Here the term linear in $\mathbf v\cdot\mathbf q$ vanishes by angular
+averaging, while
+$\langle(\mathbf v\cdot\mathbf q)^2\rangle
+=v_{\mathrm F}^2q^2/d=Dq^2/\tau$.
+Using $W_0\,2\pi\nu\tau=1$ from Eq.~\eqref{eq:tau}, we obtain
+\[
+1-W_0\Lambda
+\simeq\tau(Dq^2-\mathrm{i}\omega),
+\]
+and hence
+\begin{equation}
+\Gamma_c(\mathbf q,\omega)
+=\frac{1}{1-W_0\Lambda}
+=\frac{1}{\tau(Dq^2-\mathrm{i}\omega)}.
+\label{eq:diffpole}
+\end{equation}
+This is the diffusion pole. It describes the long-wavelength,
+low-frequency propagation of a density fluctuation, whose relaxation
+rate is $Dq^2$. At $\mathbf q=\mathbf 0$ and $\omega=0$, each
+rung--pair unit has weight $W_0\Lambda=1$, so the geometric series
+becomes singular. The pole is therefore a consequence of the
+conservation of particle number.
+
+Why does this singularity not affect the conductivity of C.2? The
+diffuson is a density mode, and a density mode is not excited by a
+uniform field. A field with $\mathbf q=0$ drives a current but cannot
+change the local density, since by the continuity equation
+$\partial_t\rho_{\mathbf q}=-\mathrm{i}\,\mathbf q\!\cdot\!\mathbf j_{\mathbf q}$
+vanishes at $\mathbf q=0$. The current vertex $v_x$ is odd in $\hat{\mathbf p}$, the pole
+sits in the isotropic ($l=0$) channel, and the two meet only through
+the factor $\mathcal J=\sum_{\mathbf p}v_x\mathcal P_{\mathbf p}$, which
+is exactly zero at $\mathbf q=0$ and of first order in $\mathbf q$ at
+small $\mathbf q$. The ladder with current vertices at both ends is
+therefore proportional to
+\[
+\mathcal J^2\,\Gamma_c\;\propto\;\frac{q_x^2}{Dq^2-\mathrm{i}\omega},
+\]
+so the pole is always accompanied by a factor that vanishes with $q$. For
+$\mathbf q\to0$ at fixed $\omega\neq0$ the denominator stays finite and the expression goes to zero, which is the order of limits shown A.1 for dc conductivity, and
+the ladder leaves $\sigma_D$ unchanged apart from the
+$\tau\to\tau_{\mathrm{tr}}$ replacement of C.2. What looked like an infinity multiplied by zero is
+resolved by taking $\mathbf q\to0$ first, as the dc conductivity requires.
+The opposite order ($\omega\to0$ at fixed $\mathbf q$) is a different
+physical question: it asks how a static density modulation relaxes, and the answer, a
+vanishing longitudinal current response, is the statement that a conserved density cannot
+flow forever, not a property of the dc conductivity.
+
+This pole starts to matter in two situations. The first is when the probe
+itself carries a wave vector, so that $q$ is an external parameter
+and $\Gamma_c$ is probed directly: the density response, the diffusion
+of a charge packet, the longitudinal conductivity at finite $q$ and
+$\omega$. There the pole appears physically, as the diffusive relaxation of density
+at rate $Dq^2$, with $D$ the diffusion constant of C.1. The second, and for our paper
+the decisive one, is when the pole momentum is not external but
+internal, and is summed over. In the diffuson the pole carries the
+momentum transferred by the probe, which we hold fixed and let go to
+zero. In the maximally crossed series the pole carries $\mathbf Q=\mathbf k+\mathbf k'$,
+the sum of the incoming and outgoing momenta; time-reversed paths pair
+$\mathbf k'\simeq-\mathbf k$, so the current vertices at the two ends
+are $v_x(\mathbf k)\,v_x(\mathbf k')\simeq-v_x^2(\mathbf k)$ and do
+\emph{not} vanish as $\mathbf Q\to0$, and $\mathbf Q$ is an integration variable, not a probe.
+No factor of $q^2$ cancels the pole. The correction to $\sigma$ is then
+a sum over all $\mathbf Q$ of $-1/Q^2$-type terms, cut off at large $Q$ by
+$1/\ell$, where the diffusion approximation fails, and at small $Q$ by the
+sample size $L$ or by dephasing, which replaces $-\mathrm{i}\omega$ in the pole
+by $1/\tau_\varphi$. Thus the same pole structure that is harmless for the
+ladder produces the quantum correction of the crossed series. This is the
+route to the scaling theory, and its dimension dependence follows from
+how $\int\mathrm{d}^dQ/Q^2$ behaves at small $Q$: it converges in $d=3$, so the
+correction is a small finite number set by the large-$Q$ cutoff; it diverges
+logarithmically in $d=2$, so the correction grows without bound as the
+infrared cutoff is removed; and it diverges as a power in $d=1$. The main
+text carries this out for the crossed series, using the same three steps
+as C.3.

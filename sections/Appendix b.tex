@@ -52,7 +52,7 @@ e^{-\mathrm{i}(\mathbf a-\mathbf b)\cdot\mathbf r}\,
 U(\mathbf r),
 \]
 and averaging two of them,
-\[
+\begin{equation}
 \begin{aligned}
 \overline{U_{\mathbf a\mathbf b}U_{\mathbf c\mathbf d}}
 &=\frac{W_0}{V^2}\int\mathrm{d}^dr\,
@@ -61,7 +61,8 @@ e^{-\mathrm{i}(\mathbf a-\mathbf b+\mathbf c-\mathbf d)
 &=\frac{W_0}{V}\,
 \delta_{\mathbf a-\mathbf b,\;\mathbf d-\mathbf c}.
 \end{aligned}
-\]
+\label{eq:pairrule}
+\end{equation}
 The Kronecker delta is momentum conservation: the two impurity
 events transfer equal and opposite momenta.
 
@@ -151,7 +152,7 @@ g_0(\mathbf p)\,U_{\mathbf p\mathbf k'}\,
 g_0(\mathbf k').
 \]
 The propagators $g_0$ are not random, so only the two $U$'s are
-averaged. By the pair rule of B.1,
+averaged. By the pair rule, Eq.~\eqref{eq:pairrule},
 \[
 \overline{U_{\mathbf k\mathbf p}U_{\mathbf p\mathbf k'}}
 =\frac{W_0}{V}\,
@@ -273,30 +274,33 @@ model; for a slowly varying density of states it is approximately
 constant near the Fermi energy and is absorbed into the chemical
 potential. For white noise $\SE$ depends on $E$ and not on
 $\mathbf k$, so we write
-\[
+\begin{equation}
 \SE^{R/A}=\mp\frac{\mathrm{i}}{2\tau},\qquad
 \frac1\tau=2\pi W_0\,\nu_{\mathrm F},\qquad
 \gamma\equiv\frac1{2\tau}
 =\pi W_0\,\nu_{\mathrm F},
-\]
+\label{eq:tau}
+\end{equation}
 and at $E=E_{\mathrm F}$
-\[
+\begin{equation}
 \overline G^{R/A}(\mathbf k)
 =\frac{1}{-\xi_{\mathbf k}\pm\mathrm{i}\gamma},
 \qquad
 \overline G^R\overline G^A
 =\frac{1}{\xi_{\mathbf k}^2+\gamma^2}.
-\]
+\label{eq:Gavg}
+\end{equation}
 The infinitesimal $0^+$ of the bare propagators has been replaced
 by the finite width $\gamma$.
 
 The two poles of $\overline G^R\overline G^A$ lie at
 $\xi=\pm\mathrm{i}\gamma$, on opposite sides of the real axis, and
-\[
+\begin{equation}
 \int_{-\infty}^{\infty}\mathrm{d}\xi\;
 \overline G^R\,\overline G^A
 =\frac{\pi}{\gamma}=2\pi\tau.
-\]
+\label{eq:pinch}
+\end{equation}
 We say that such a pair of propagators is \emph{pinched}: as
 $\gamma\to0$ the poles approach the real axis from opposite sides,
 the integration contour is trapped between them, and the
@@ -358,14 +362,15 @@ $l_2=U_{\mathbf a\mathbf k'}$,
 $l_1=U_{\mathbf k\mathbf a}$. Here $\mathbf a$ is the momentum
 of the advanced line between its two dots. A pairing is named by
 the dots it joins: $(u_1l_1)$ is a dashed line from the upper
-left dot to the lower left dot. The pair rule of B.1 says that
+left dot to the lower left dot. The pair rule, Eq.~\eqref{eq:pairrule}, says that
 the momenta transferred at the two paired dots are equal and
 opposite, where the transfer at a dot is out minus in
 ($\mathbf p-\mathbf k$ at $u_1$,
 $\mathbf k'-\mathbf p$ at $u_2$,
 $\mathbf k-\mathbf a$ at $l_1$,
 $\mathbf a-\mathbf k'$ at $l_2$). This fixes $\mathbf a$:
-\begin{align*}
+\begin{equation}
+\begin{aligned}
 &\text{uncrossed } (u_1l_1)(u_2l_2):
 \quad
 (\mathbf p-\mathbf k)+(\mathbf k-\mathbf a)=0
@@ -375,7 +380,9 @@ $\mathbf a-\mathbf k'$ at $l_2$). This fixes $\mathbf a$:
 (\mathbf p-\mathbf k)+(\mathbf a-\mathbf k')=0
 \ \Rightarrow\ \mathbf a=\mathbf K-\mathbf p;
 \quad \mathbf K=\mathbf k+\mathbf k'.
-\end{align*}
+\end{aligned}
+\label{eq:aroute}
+\end{equation}
 (The second pair of each line gives the same $\mathbf a$.)
 So the two lines carry the same momentum between uncrossed
 rungs, and opposite momenta, up to the constant $\mathbf K$,
@@ -385,7 +392,7 @@ In the uncrossed diagram the loop sum is over
 $\overline G^R(\mathbf p)\,\overline G^A(\mathbf p)$: the two
 propagators have the same energy $\xi_{\mathbf p}$ for every
 $\mathbf p$, so their poles always face each other and the sum
-is pinched (B.3). In the crossed diagram the sum is over
+is pinched, Eq.~\eqref{eq:pinch}. In the crossed diagram the sum is over
 $\overline G^R(\mathbf p)\,\overline G^A(\mathbf K-\mathbf p)$,
 and the two energies differ. For small $\mathbf K$, using
 $\epsilon_{-\mathbf p}=\epsilon_{\mathbf p}$ and expanding we get,
@@ -397,12 +404,13 @@ $\epsilon_{-\mathbf p}=\epsilon_{\mathbf p}$ and expanding we get,
 \delta=\mathbf v_{\mathbf p}\cdot\mathbf K,
 \]
 and the energy integral is
-\[
+\begin{equation}
 \int\mathrm d\xi\,
 \frac{1}{(-\xi+\mathrm i\gamma)
 (-\xi+\delta-\mathrm i\gamma)}
 =\frac{\pi}{\gamma+\mathrm i\delta/2}.
-\]
+\label{eq:crossint}
+\end{equation}
 This equals the pinched value $\pi/\gamma$ at $\delta=0$ and
 falls off once $|\delta|\gtrsim\gamma$, that is
 $v_{\mathrm F}K\gtrsim1/2\tau$, or
@@ -574,7 +582,7 @@ Class & Pairing structure & Name\\
 
 \paragraph{Which arrangements matter ?}
 We need a rule for the size of a diagram. Each rung brings a
-weight $W_0=1/(2\pi\nu\tau)$ (B.3) and a free momentum sum.
+weight $W_0=1/(2\pi\nu\tau)$, Eq.~\eqref{eq:tau}, and a free momentum sum.
 If that sum runs over a pinched retarded--advanced pair carrying
 the same momentum $\mathbf p$, as in the ladder, it gives
 \[
@@ -757,19 +765,18 @@ pair: it is not leading.}
 
 \subsection*{B.5\quad The dressed bubble and the sum of the diagrams}
 
-\paragraph{Dressed bubble.}
-With no rung the pairings on the two lines are independent and
-their sum factorises,
+Now that relevant diagrams are clear we can move to sum the diagrams and get the resulting conductivity from their contribution. First, consider no rung the pairings on the two lines are independent and their sum factorises,
 $\overline{G^RG^A}\to\overline G^R\,\overline G^A$.
 Closing the two dressed lines into a loop with the two current
 vertices gives the \emph{dressed bubble}
 (Fig.~\ref{fig:bubble}),
-\[
+\begin{equation}
 S^{(0)}
 =\sum_{\mathbf k}v_{\mathbf k x}^2\,
 \overline G^R(\mathbf k)\,
 \overline G^A(\mathbf k),
-\]
+\label{eq:S0}
+\end{equation}
 with one momentum summed. This is class~1. The bare bubble of
 $g_0^Rg_0^A$ alone is not meaningful, since
 $\int\mathrm{d}\xi\,g_0^Rg_0^A=\pi/0^+$ diverges; the arcs
@@ -817,13 +824,12 @@ bubble, class~1.}
 \label{fig:bubble}
 \end{figure}
 
-\paragraph{Bubbles with rungs.}
 Adding $n$ rungs gives the other families. For the ladder
 (identity arrangement) the two lines carry the same momentum
 between rungs, so with the momenta
 $\mathbf p_0,\dots,\mathbf p_n$ of the $n+1$ dressed pairs and
 a weight $W_0/V$ per rung,
-\[
+\begin{equation}
 S^{(n)}_{\mathrm{ladder}}
 =
 \left(\frac{W_0}{V}\right)^n
@@ -835,7 +841,8 @@ v_{\mathbf p_0x}
 \overline G^A(\mathbf p_j)
 \right]
 v_{\mathbf p_nx}.
-\]
+\label{eq:Sladder}
+\end{equation}
 For the maximally crossed arrangement (reversal) the advanced
 momenta are $\mathbf K-\mathbf p_j$ with
 $\mathbf K=\mathbf k+\mathbf k'$ the same at every rung; this
@@ -860,7 +867,7 @@ where $\simeq$ means that the arrangements that fail the pinch
 rule of B.4 are dropped. By the Kubo--Greenwood formula of
 Appendix~A, in which the retarded--advanced term carries the
 prefactor $e^2g_s/2\pi V$, this is the conductivity:
-\[
+\begin{equation}
 \begin{aligned}
 \sigma_{dc}
 &\simeq
@@ -870,9 +877,10 @@ S^{(0)}
 +\sum_{n\ge1}S^{(n)}_{\mathrm{ladder}}
 +\sum_{n\ge2}S^{(n)}_{\mathrm{cross}}
 \right]\\
-&=\frac{e^2g_s}{2\pi V}S.
+&=\frac{e^2g_s}{2\pi V}S,
 \end{aligned}
-\]
+\label{eq:sigma}
+\end{equation}
 where $S$ is the contribution from all the diagrams of Fig.~\ref{fig:sum}.
 
 % float pages are top-aligned instead of vertically centred
@@ -890,6 +898,7 @@ where $S$ is the contribution from all the diagrams of Fig.~\ref{fig:sum}.
    \node[vert] at (0,-0.7) {};
    \node[vert] at (4.6,-0.7) {};
  }
+ \node at (-1.9,-0.7) {$S=$};
  % ---- row 1
  \begin{scope}
   \frm
