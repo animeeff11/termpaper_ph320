@@ -377,19 +377,18 @@ Putting this and Eq.~\eqref{eq:wl_pole} into Eq.~\eqref{eq:wl_Cooperon}, and kee
 \sum_{n\ge2}S^{(n)}_{\mathrm{cross}}\simeq-\frac1V\sum_{\mathbf K}\frac{W_0}{D\tau K^2}\,4\pi V\nu D\tau^2
 =-4\pi\nu W_0\tau\sum_{\mathbf K}\frac1{K^2}=-2V\int\frac{\mathrm{d}^dK}{(2\pi)^d}\frac1{K^2},
 \]
-so that $W_0$, $\nu$, $D$ and $\tau$ drop out. With the prefactor $e^2g_s/2\pi V$ of Eq.~\eqref{eq:wl_three}, $g_s=2$ and $\hbar$ restored,
+so that $W_0$, $\nu$, $D$ and $\tau$ drop out. With the prefactor $e^2g_s/2\pi V$ of Eq.~\eqref{eq:wl_three}, $g_s=2$ and $\hbar$ restored, the class 3 gives the leading order quantum correction to conductivity which is written as,
 \begin{equation}
     \delta\sigma=-\frac{2e^2}{\pi\hbar}\int\frac{\mathrm{d}^dK}{(2\pi)^d}\frac{1}{K^2}.
     \label{eq:wl_deltasigma}
 \end{equation}
-The pole does not by itself limit the integral. The limits come from where the approximations stop holding: the diffusion form of the Cooperon and $\mathbf k'\simeq-\mathbf k$ are valid for $K\ell\ll1$, so the integral is cut off at $K\sim1/\ell$, and the larger $K$ that the diffusion form does not describe only changes the Drude conductivity by a small non-universal amount. At small $K$ it is cut off by the sample size, $K\gtrsim1/L$, or by whatever destroys the phase coherence of the time-reversed paths, such as the phase-breaking length $L_\varphi$.
+The pole does not by itself limit the integral. The limits come from where the approximations stop holding: the diffusion form of the Cooperon and $\mathbf k'\simeq-\mathbf k$ are valid for $K\ell\ll1$, so the integral is cut off at $K\sim1/\ell$, and the larger $K$ that the diffusion form does not describe only changes the Drude conductivity by a small non-universal amount. At small $K$ it is cut off by the sample size itself, $K\gtrsim1/L$, or by whatever destroys the phase coherence of the time-reversed paths, such as the phase-breaking length $L_\varphi$.
 
 Writing $1/K^2=D\int_0^\infty\mathrm{d}t\,e^{-DK^2t}$ turns this into an integral over time, with $t\sim\tau$ for the $1/\ell$ cutoff and $t_{\mathrm{coh}}\sim L_{\mathrm{coh}}^2/D$ for the infrared one, $L_{\mathrm{coh}}$ being the smaller of $L$ and $L_\varphi$:
 \[
 \delta\sigma\simeq-\frac{2e^2D}{\pi\hbar}\int_{\tau}^{t_{\mathrm{coh}}}\mathrm{d}t\,(4\pi Dt)^{-d/2} .
 \]
 The integrand is the classical probability density for a diffusing particle to be back at its starting point, integrated over the times for which the motion is still coherent. This is the interference of the time-reversed paths pictured at the start, which is constructive only for paths that close on themselves, and it lowers the conductivity.
-
 \subsection*{Size dependence of the conductance}
 
 Cutting the integral of Eq.~\eqref{eq:wl_deltasigma} at $1/L$ and $1/\ell$,
@@ -409,14 +408,59 @@ since $K^{d-3}$ at $K=1/L$ times $1/L$ is $L^{2-d}$. For $g\gg1$ the conductivit
     \beta(g)\simeq(d-2)-\frac{a_d}{g},\qquad a_d=\frac{2}{\pi}\frac{S_d}{(2\pi)^d},
     \label{eq:wl_beta}
 \end{equation}
-with $a_1=2/\pi^2$, $a_2=1/\pi^2$, $a_3=1/\pi^3$. The first term is the ohmic value of Eq.~\eqref{eq:ohmic_regime}. The second is the interference correction, which is always negative: coherent backscattering never raises the conductance.
+with $a_1=2/\pi^2$, $a_2=1/\pi^2$, $a_3=1/\pi^3$ for $g$ in units of $e^2/\hbar$. The first term is the ohmic value of Eq.~\eqref{eq:ohmic_regime}. The second is the interference correction, which is always negative: coherent backscattering decreases the conductance.
 
-In $d=2$ the integral is logarithmic,
+Eq.~\eqref{eq:wl_beta} is the large-$g$ end of the scaling function; the small-$g$ end is $\beta\simeq\ln\frac{g}{g_a}$ (Eq.~\eqref{eq:exp_regime}). AALR state that $g_a(d)$ is of order one, but give no details of its structure. We use the work of M\"uller and Delande \cite{MullerDelande2011} to establish how the dimension enters at small $g$. A sample of size $L^d$ has $N\sim(kL)^{d-1}$ transverse channels. Writing its conductance as $G=Ng_1$, with $g_1$ the conductance per channel, and treating the channels as uncoupled one-dimensional wires, $g_1$ obeys the one-dimensional law and
 \[
-g(L)=g(\ell)-\frac1{\pi^2}\ln\frac{L}{\ell}
+\beta=\frac{\mathrm{d}\ln N}{\mathrm{d}\ln L}+\frac{\mathrm{d}\ln g_1}{\mathrm{d}\ln L}=(d-1)+\beta_1(g_1).
 \]
-(the same logarithm was obtained diagrammatically by Gor'kov, Larkin and Khmel'nitskii \cite{GLK1979}), so $\beta=-1/(\pi^2g)$ is negative wherever the expansion holds. The conductance of a larger sample is smaller, with no scale at which the decrease stops. Setting $g\sim1$ gives a length $\xi_{\mathrm{loc}}\sim\ell\,e^{\pi^2g(\ell)}$, where the perturbation theory fails; this is exponentially large for a good metal and is the scale beyond which the states are localized, as in Eq.~\eqref{eq:exp_regime}. If $\beta(g)$ is continuous and monotonic, as AALR assume, then in $d=2$ it rises from $-\infty$ at $g\to0$, where $\beta\simeq\ln g$, and approaches $0$ from below at large $g$, so it never vanishes: there is no fixed point and no metallic phase, and every state is localized for any weak disorder. This is the central result of AALR that we reproduced.
+For $g\to0$, $\beta_1\simeq\ln g_1$, so $\beta\simeq\ln g+(d-1)$. This is Eq.~\eqref{eq:exp_regime} with $\ln g_a=-(d-1)$: the dimension enters the small-$g$ end as an additive constant, $0$, $1$, $2$ for $d=1,2,3$. For $g\to\infty$ the same formula tends to $(d-1)-1=d-2$, the ohmic value, so it agrees with Eq.~\eqref{eq:wl_beta} at leading order. It cannot give the interference correction, which comes from the coupling between channels that the approximation neglects, so at large $g$ we keep Eq.~\eqref{eq:wl_beta}. 
+Fig.~\ref{fig:beta_dims} shows the function that results for $d=1,2,3$ when the two ends are joined as AALR assume, with $\beta$ continuous and monotonic. We note that the curves are schematic: they are drawn to show the effect of weak localization on the flow of $g$, and are not a universal scaling function. Only the sign of $\beta$ and the existence of a single zero for $d=3$ are results; the shape of the join between the two ends, and the value of $g_c$, depend on the model and on how $g$ is normalised. Let's look into the three cases separately.
 
-In $d=3$ the integral is dominated by the upper limit $1/\ell$, so the size-dependent part of $\delta\sigma$ is only $+e^2/\pi^3\hbar L$ and $\beta=1-a_3/g$ is positive at large $g$. At small $g$ it is negative, so $\beta$ crosses zero at some $g_c$, an unstable fixed point separating the metal ($g>g_c$) from the insulator ($g<g_c$). Its existence follows from continuity and not from Eq.~\eqref{eq:wl_beta}, since $a_3$ puts the zero at $g\sim1/\pi^3\ll1$, deep in the region where the expansion fails; for the same reason the critical exponent is not predicted here. In $d=1$ the correction is of order $g$ itself already at $L\sim\ell$, and all states are localized.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{figs/beta_all.png}
+\caption{The scaling function $\beta(g)=\mathrm{d}\ln g/\mathrm{d}\ln L$ against $\ln g$ for $d=1$, $2$, $3$, in the normalisation $g=(2mD/\hbar)(kL)^{d-2}$ of Ref.~\cite{MullerDelande2011}. Dashed lines mark the ohmic values $d-2$. The $d=1$ curve is the exact result for the typical conductance, Eq.~(48) of that reference. For $d=2,3$ the small-$g$ part is their transverse-channel formula, Eq.~(53), the large-$g$ part is Eq.~\eqref{eq:wl_beta} with the coefficient converted to this normalisation, $a_d\to2/\pi$, and the two are joined between $\ln g=0$ and $2$ by a cubic interpolation matching values and slopes at both ends. Arrows show the flow of $g$ with increasing $L$ in $d=3$; in $d=1,2$ the curves lie below $\beta=0$ everywhere and $g$ always decreases. Only the sign of $\beta$ and the single zero for $d=3$ are results; the shape of the join between the two ends and the position of $g_c$ are not.}
+\label{fig:beta_dims}
+\end{figure}
 
-The result holds for a time-reversal-symmetric, non-interacting system at zero temperature without spin--orbit scattering. A magnetic field cuts the Cooperon off at a finite $K$ and removes the logarithm, and spin--orbit scattering changes the sign of the correction \cite{Hikami1980}. This is why the scaling function depends on the symmetry, as noted in the scaling-theory section.
+\subsubsection*{One dimension}
+
+For $d=1$ the integral is dominated by its lower limit, $\int_{1/L}^{1/\ell}K^{-2}\,\mathrm{d}K=L-\ell$, so the interference correction grows linearly with the length,
+\[
+\delta\sigma(L)=-\frac{2e^2}{\pi^2\hbar}\,(L-\ell),
+\]
+and Eq.~\eqref{eq:wl_beta} gives $\beta=-1-a_1/g$ with $a_1=2/\pi^2$. Both terms are negative: the ohmic one, because $g=\hbar\sigma/e^2L$ falls as $1/L$ for any wire, and the interference one, because backscattering only lowers the conductance. At small $g$ the exponential decay of Eq.~\eqref{eq:exp_regime} gives $\beta\simeq\ln g$, which is also negative. Joining the two ends gives the red curve of Fig.~\ref{fig:beta_dims}: $\beta<0$ at every $g$, there is no fixed point, and $g$ decreases without bound.
+The length at which the perturbative result fails follows from the same integral. With the density of states $\nu_1=2/\pi\hbar v_F$ (spin included) and $D=v_F\ell$, the Boltzmann conductivity is $\sigma_0=e^2\nu_1D=2e^2\ell/\pi\hbar$, so $g(\ell)=2/\pi$ and
+\[
+g(L)=\frac{2}{\pi}\frac{\ell}{L}-\frac{2}{\pi^2}\Bigl(1-\frac{\ell}{L}\Bigr)\qquad(\text{units of }e^2/\hbar).
+\]
+This vanishes at $L=(1+\pi)\ell\approx4\ell$: the correction is as large as the Boltzmann conductivity after a few mean free paths, so the localization length is $\xi\sim\ell$. Beyond this length $g$ falls exponentially, $g\propto e^{-L/\xi}$, and all states are localized for any amount of disorder, which is the known one-dimensional result \cite{Mott01041961,LeeRamakrishnan1985}.
+
+\subsubsection*{Two dimensions}
+
+For $d=2$ the integral is logarithmic, $\int_{1/L}^{1/\ell}K^{-1}\,\mathrm{d}K=\ln(L/\ell)$, and Eq.~\eqref{eq:wl_beta} gives $\mathrm{d}g/\mathrm{d}\ln L=-a_2=-1/\pi^2$, independent of $g$:
+\[
+g(L)=g(\ell)-\frac1{\pi^2}\ln\frac{L}{\ell}.
+\]
+The Cooperon fixes the cutoffs of the integral at $1/L$ and $1/\ell$, whereas AALR, adapting the calculation of Langer and Neal, left the cutoff undetermined; the same logarithm was found diagrammatically in Ref.~\cite{GLK1979}. The correction has no scale at which it stops growing. Setting $g(L)\sim1$ gives the length at which the perturbation theory fails, $\xi\sim\ell\,e^{\pi^2g(\ell)}$. For free electrons $\sigma_0=e^2k_F\ell/2\pi\hbar$, so $g(\ell)=k_F\ell/2\pi$ and
+\[
+\xi\sim\ell\,e^{\pi k_F\ell/2},
+\]
+which is exponentially large for a good metal: a weakly disordered film looks metallic over a wide range of sizes before the logarithm takes over.
+
+The blue curve of Fig.~\ref{fig:beta_dims} shows what AALR's assumptions then require. At large $g$ it approaches $0$ from below, as Eq.~\eqref{eq:wl_beta} shows, and at small $g$ it follows $\beta\simeq\ln g+1$. AALR argue that $\beta$ is continuous, since it describes the blocking of finite groups of sites and has no built-in singularity, and monotonic in $g$, since weaker coupling always means stronger localization. A continuous monotonic function with these two ends never vanishes. So there is no fixed point and $\beta<0$ at every $g$: for $L\to\infty$, $g\to0$ for any disorder. A minimum metallic conductivity of the kind proposed by Mott and Schuster would need $\beta$ to jump through zero with a cusp, which the continuity assumption excludes. What replaces it is a smooth crossover from the logarithmic decrease to the exponential one at $L\sim\xi$. This is the main result of AALR, and the logarithm that leads to it is the one we derived.
+
+\subsubsection*{Three dimensions}
+
+For $d=3$ the integral is $\int_{1/L}^{1/\ell}\mathrm{d}K=1/\ell-1/L$. The large term $-e^2/\pi^3\hbar\ell$ only renormalises $\sigma_0$, and the part that depends on $L$ is $+e^2/\pi^3\hbar L$, which decays as $1/L$. Conventional transport theory therefore remains accurate for weak disorder, and in terms of $g$
+\[
+\beta=1-\frac{a_3}{g},\qquad a_3=\frac1{\pi^3},
+\]
+is positive at large $g$ and approaches the ohmic value $1$ from below. At small $g$, $\beta\simeq\ln g+2$ is negative, so $\beta$ must cross zero at some $g_c$ (green curve of Fig.~\ref{fig:beta_dims}). Eq.~\eqref{eq:wl_beta} alone puts the zero at $g\sim1/\pi^3\ll1$, where the expansion fails, so the existence of $g_c$ follows from continuity and not from the weak-localization term. This is the difference from $d\le2$: a metal survives in three dimensions because the interference correction saturates.
+
+The fixed point is unstable: $g$ grows with $L$ for $g>g_c$, towards a metal, and falls for $g<g_c$, towards an insulator. Near it we expand $\beta\simeq s\ln(g/g_c)$ with $s=\mathrm{d}\beta/\mathrm{d}\ln g|_{g_c}$. For $u=\ln(g/g_c)$ this is $\mathrm{d}u/\mathrm{d}\ln L=su$, so $u(L)=u_0(L/L_0)^s$. The deviation reaches order one at $\xi=L_0|u_0|^{-1/s}$, so the length diverges at the transition with exponent $\nu=1/s$, as in AALR. On the metallic side, for $L\gg\xi$, the conductivity is $\sigma=g/L\sim\xi^{-1}\sim|u_0|^{\nu}$, so it vanishes continuously, $\sigma\propto|g_0-g_c|^{\nu}$, in agreement with Wegner's scaling relation \cite{Wegner1976}. This is the opposite of a minimum metallic conductivity, which would require $\sigma$ to jump to a finite value at the transition. The slope $s$ is not fixed by our result. AALR estimate it from the locator expansion, $\beta=\ln(g/g_a)[1+\alpha g+\dots]$ with $\alpha>0$, which gives $s>1$ and $\nu\lesssim1$; we quote this and do not derive it.
+
+Later work (quoted and not derived), corrects the exponent. In the nonlinear $\sigma$-model $\beta=\epsilon-2t-\dots$ with $t=1/\pi g$ and $\epsilon=d-2$, whose leading term is our Eq.~\eqref{eq:wl_beta} in units of $e^2/h$ \cite{UeokaSlevin2017}. Borel--Pad\'e resummation gives $\nu=1.64$, $g_c=0.523$ for a strong-localization slope $A=2$, and $\nu=1.81$, $g_c=0.539$ for $A=1$, and finite-size scaling of the Anderson model gives $\nu=1.587\pm0.006$ and a critical mean conductance $g_c\simeq0.575$ \cite{UeokaSlevin2017}. The exponent exceeds the bound $\nu\lesssim1$, which rested on extrapolating the small-$g$ series to $g\sim1$. The value of $g_c$ is not universal: it depends on the average taken and on the boundary conditions \cite{SlevinMarkosOhtsuki2001}. The zero of our schematic green curve is not comparable with these numbers.
+
+The result holds for a time-reversal-symmetric, non-interacting system at zero temperature without spin--orbit scattering. A magnetic field cuts the Cooperon off at a finite $K$ and removes the logarithm, and spin--orbit scattering changes the sign of the correction \cite{Hikami1980}.
